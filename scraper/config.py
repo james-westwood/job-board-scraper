@@ -27,6 +27,12 @@ EXCLUDE_KEYWORDS = [
     "business development",
 ]
 
+# Keep only UK (and undetermined) roles. Several tracked companies hire
+# globally -- BP, Workiva and Teledyne especially -- and their US/APAC postings
+# swamp the report otherwise. Postings whose location cannot be determined are
+# always kept, so this never silently bins a job.
+UK_ONLY = True
+
 # Per-page budget before a company is written off as failed.
 PAGE_TIMEOUT_MS = 30_000
 

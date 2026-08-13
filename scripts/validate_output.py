@@ -14,6 +14,8 @@ from pathlib import Path
 ISO_UTC = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 JOB_ID = re.compile(r"^scrape:[a-z0-9-]+:[0-9a-f]{12}$")
 ARRANGEMENTS = {"remote", "hybrid", "onsite", None}
+# "non_uk" must never appear: those are filtered out before output.
+REGIONS = {"uk", "unknown"}
 CONFIDENCES = {"stated", "inferred", "unknown"}
 
 META_FIELDS = {
@@ -31,6 +33,7 @@ JOB_FIELDS = {
     "company": (str,),
     "title": (str,),
     "location": (str, type(None)),
+    "location_region": (str,),
     "work_arrangement": (str, type(None)),
     "work_arrangement_detail": (str, type(None)),
     "work_arrangement_confidence": (str,),
@@ -126,6 +129,11 @@ def validate(path: Path) -> list[str]:
             if job["job_id"] in seen_ids:
                 errors.append(f"{where}.job_id duplicated: {job['job_id']}")
             seen_ids.add(job["job_id"])
+        if job.get("location_region") not in REGIONS:
+            errors.append(
+                f"{where}.location_region invalid: {job.get('location_region')!r} "
+                f"(expected one of {sorted(REGIONS)})"
+            )
         if job.get("work_arrangement") not in ARRANGEMENTS:
             errors.append(f"{where}.work_arrangement invalid: {job.get('work_arrangement')!r}")
         if job.get("work_arrangement_confidence") not in CONFIDENCES:

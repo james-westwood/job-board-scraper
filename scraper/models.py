@@ -44,6 +44,10 @@ class Job:
     company: str
     title: str
     location: str | None
+    # "uk" or "unknown" -- "non_uk" postings are filtered out before this point
+    # when config.UK_ONLY is set, so the consumer can see which ones got in
+    # because their location could not be determined.
+    location_region: str
     work_arrangement: str | None
     work_arrangement_detail: str | None
     work_arrangement_confidence: str
@@ -60,6 +64,7 @@ class Job:
             "company": self.company,
             "title": self.title,
             "location": self.location,
+            "location_region": self.location_region,
             "work_arrangement": self.work_arrangement,
             "work_arrangement_detail": self.work_arrangement_detail,
             "work_arrangement_confidence": self.work_arrangement_confidence,
@@ -80,6 +85,7 @@ class CompanyResult:
     name: str
     url: str
     postings_seen: int = 0
+    excluded_non_uk: int = 0
     jobs: list[Job] = field(default_factory=list)
     error: str | None = None
 

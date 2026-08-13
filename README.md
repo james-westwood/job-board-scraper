@@ -31,7 +31,9 @@ Shape:
     "companies_attempted": 34,
     "companies_succeeded": 32,
     "total_postings_seen": 1709,
-    "total_postings_matched": 22,
+    "total_postings_matched": 4,
+    "total_postings_excluded_non_uk": 17,
+    "uk_filter_enabled": true,
     "companies_failed": [
       {"name": "ScottishPower", "url": "...", "error": "timeout after 30s"}
     ],
@@ -41,7 +43,8 @@ Shape:
     {
       "company": "AECOM",
       "title": "Senior AI Engineer",
-      "location": "Singapore",
+      "location": "Bristol, UK",
+      "location_region": "uk",
       "work_arrangement": "hybrid",
       "work_arrangement_detail": "2 days/week in office",
       "work_arrangement_confidence": "stated",
@@ -67,6 +70,11 @@ Notes for the consuming side:
 - `companies_no_postings` (an addition to the original spec) lists companies that loaded
   fine but yielded nothing. That distinguishes "not hiring" from "the scraper went blind",
   which a bare `0` cannot.
+- **UK only.** Confidently non-UK postings are dropped and counted in
+  `total_postings_excluded_non_uk`, so a thin week is distinguishable from an
+  over-aggressive filter. A posting whose location can't be determined is **kept**, with
+  `location_region: "unknown"` — nothing is ever silently binned for an unreadable
+  location. Set `UK_ONLY = False` in `scraper/config.py` to turn this off.
 - `salary_min_gbp` / `salary_max_gbp` are `null` unless a **sterling** figure was parsed
   confidently. `salary_raw` is kept verbatim regardless — including for USD/EUR postings,
   which are reported but never converted.
@@ -125,6 +133,19 @@ manual `workflow_dispatch` with optional `only` / `adapter` inputs.
 CI runs the unit tests and validates the output schema before committing, so a malformed
 file never reaches the consumer.
 
+## Retries
+
+Two different problems, handled two different ways:
+
+- **HTTP adapters** use `tenacity` — 3 attempts, exponential backoff with jitter, on
+  transport errors and 429/5xx only. A 404 is a real answer (the board moved) and isn't
+  retried. This matters most for Workday, which pages 20 jobs at a time: one transient 503
+  partway through Teledyne's ~700-role tenant would otherwise lose that company for the week.
+- **The browser adapter** doesn't use tenacity, because its retry isn't a retry — a failed
+  `page.goto` falls back to a *different* strategy (`wait_until="commit"` plus a fixed
+  render window) rather than repeating the same call. Wrapping that in a retry library
+  would hide what it actually does.
+
 ## Known limitations
 
 - **ScottishPower** refuses connections from datacentre IPs. It fails locally and will
@@ -140,8 +161,10 @@ file never reaches the consumer.
   of these UK sites are slower or more defensive from a datacentre IP — Aira, for one,
   works locally but has timed out from Actions. Failures are retried once and then
   reported, so this shows up honestly in `companies_failed` rather than as a silent gap.
-- **No location filter.** The criteria in the spec are title-only, so US and APAC roles do
-  come through (BP, Workiva and Teledyne are the noisy ones). Easy to add if wanted.
+- The UK filter uses country and region signals before city names, because Birmingham,
+  Manchester, Cambridge, Bristol, Durham and Worcester all exist in the US too. It only
+  reads the top of a job description, since these pages routinely list every country the
+  company operates in further down.
 
 ## Scope
 

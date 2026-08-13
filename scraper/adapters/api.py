@@ -11,10 +11,43 @@ import html
 import re
 
 import httpx
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential_jitter,
+)
 
 from ..models import Posting
 
 _TAGS = re.compile(r"<[^>]+>")
+
+
+class RetryableStatus(Exception):
+    """A response worth trying again -- rate limited or a server-side fault."""
+
+
+@retry(
+    retry=retry_if_exception_type((httpx.TransportError, RetryableStatus)),
+    stop=stop_after_attempt(3),
+    wait=wait_exponential_jitter(initial=1, max=8),
+    reraise=True,
+)
+async def request(client: httpx.AsyncClient, method: str, url: str, **kwargs) -> httpx.Response:
+    """Make one HTTP call, retrying transient failures with backoff.
+
+    Worth having because Workday pages 20 jobs at a time -- Teledyne's tenant is
+    ~700 roles, so a single 503 partway through would otherwise lose that whole
+    company for the week. The jittered backoff also keeps us from hammering a
+    host that is already struggling.
+
+    Only transport errors and 429/5xx are retried. A 404 is a real answer: the
+    board moved, and repeating the call will not change that.
+    """
+    response = await client.request(method, url, **kwargs)
+    if response.status_code == 429 or response.status_code >= 500:
+        raise RetryableStatus(f"HTTP {response.status_code} from {url}")
+    return response
 
 
 def strip_html(raw: str | None) -> str | None:
@@ -70,7 +103,9 @@ async def workday(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     total = None
     # Hard cap: some tenants (FLIR ~700) are group-wide. 50 pages = 1000 jobs.
     for _ in range(50):
-        r = await client.post(
+        r = await request(
+            client,
+            "POST",
             endpoint,
             json={"appliedFacets": {}, "limit": limit, "offset": offset, "searchText": ""},
             timeout=30.0,
@@ -104,7 +139,7 @@ async def workday_detail(client: httpx.AsyncClient, cfg: dict, posting: Posting)
     path = posting.url.split(f"/{site}", 1)[-1]
     if not path:
         return None
-    r = await client.get(f"{origin}/wday/cxs/{tenant}/{site}{path}", timeout=25.0)
+    r = await request(client, "GET", f"{origin}/wday/cxs/{tenant}/{site}{path}", timeout=25.0)
     if r.status_code != 200:
         return None
     info = (r.json() or {}).get("jobPostingInfo") or {}
@@ -123,9 +158,7 @@ async def workday_detail(client: httpx.AsyncClient, cfg: dict, posting: Posting)
 
 async def workable(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(
-        f"https://apply.workable.com/api/v1/widget/accounts/{slug}", timeout=30.0
-    )
+    r = await request(client, "GET", f"https://apply.workable.com/api/v1/widget/accounts/{slug}", timeout=30.0)
     r.raise_for_status()
     out = []
     for j in r.json().get("jobs") or []:
@@ -148,7 +181,7 @@ async def workable(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def recruitee(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(f"https://{slug}.recruitee.com/api/offers/", timeout=30.0)
+    r = await request(client, "GET", f"https://{slug}.recruitee.com/api/offers/", timeout=30.0)
     r.raise_for_status()
     out = []
     for o in r.json().get("offers") or []:
@@ -171,7 +204,7 @@ async def recruitee(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def pinpoint(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(f"https://{slug}.pinpointhq.com/postings.json", timeout=30.0)
+    r = await request(client, "GET", f"https://{slug}.pinpointhq.com/postings.json", timeout=30.0)
     r.raise_for_status()
     out = []
     for p in r.json().get("data") or []:
@@ -211,7 +244,7 @@ async def pinpoint(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def bamboohr(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(f"https://{slug}.bamboohr.com/careers/list", timeout=30.0)
+    r = await request(client, "GET", f"https://{slug}.bamboohr.com/careers/list", timeout=30.0)
     r.raise_for_status()
     out = []
     for j in r.json().get("result") or []:
@@ -233,9 +266,7 @@ async def bamboohr(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def bamboohr_detail(client: httpx.AsyncClient, cfg: dict, posting: Posting) -> str | None:
     job_id = posting.url.rstrip("/").rsplit("/", 1)[-1]
-    r = await client.get(
-        f"https://{cfg['slug']}.bamboohr.com/careers/{job_id}/detail", timeout=25.0
-    )
+    r = await request(client, "GET", f"https://{cfg['slug']}.bamboohr.com/careers/{job_id}/detail", timeout=25.0)
     if r.status_code != 200:
         return None
     res = (r.json() or {}).get("result") or {}
@@ -245,9 +276,7 @@ async def bamboohr_detail(client: httpx.AsyncClient, cfg: dict, posting: Posting
 
 async def greenhouse(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(
-        f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true", timeout=30.0
-    )
+    r = await request(client, "GET", f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true", timeout=30.0)
     r.raise_for_status()
     return [
         Posting(
@@ -262,7 +291,7 @@ async def greenhouse(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def lever(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(f"https://api.lever.co/v0/postings/{slug}?mode=json", timeout=30.0)
+    r = await request(client, "GET", f"https://api.lever.co/v0/postings/{slug}?mode=json", timeout=30.0)
     r.raise_for_status()
     out = []
     for j in r.json() or []:
@@ -284,7 +313,8 @@ async def lever(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
 
 async def ashby(client: httpx.AsyncClient, cfg: dict) -> list[Posting]:
     slug = cfg["slug"]
-    r = await client.get(
+    r = await request(
+        client, "GET",
         f"https://api.ashbyhq.com/posting-api/job-board/{slug}?includeCompensation=true",
         timeout=30.0,
     )

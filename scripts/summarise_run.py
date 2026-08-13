@@ -20,6 +20,8 @@ def main() -> int:
     print(f"- **Companies:** {m['companies_succeeded']}/{m['companies_attempted']} succeeded")
     print(f"- **Postings seen:** {m['total_postings_seen']}")
     print(f"- **Matched:** {m['total_postings_matched']}")
+    if m.get("uk_filter_enabled"):
+        print(f"- **Dropped as non-UK:** {m.get('total_postings_excluded_non_uk', 0)}")
     print(f"- **Window:** {m['run_started_utc']} → {m['run_finished_utc']}\n")
 
     if jobs:
@@ -27,12 +29,15 @@ def main() -> int:
         print("| Company | Title | Location | Arrangement | Salary |")
         print("| --- | --- | --- | --- | --- |")
         for j in jobs:
+            loc = j["location"] or "—"
+            if j.get("location_region") == "unknown":
+                loc += " _(region unconfirmed)_"
             arr = j["work_arrangement"] or "unknown"
             if j["work_arrangement_confidence"] != "stated":
                 arr += f" _({j['work_arrangement_confidence']})_"
             title = f"[{j['title']}]({j['url']})"
             print(
-                f"| {j['company']} | {title} | {j['location'] or '—'} | "
+                f"| {j['company']} | {title} | {loc} | "
                 f"{arr} | {j['salary_raw'] or '—'} |"
             )
         print()

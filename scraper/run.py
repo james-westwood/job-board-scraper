@@ -23,7 +23,8 @@ from playwright.async_api import async_playwright
 
 from .adapters.api import API_ADAPTERS
 from .adapters.browser import enrich_with_browser, scrape_with_browser
-from .config import MAX_CONCURRENCY, SCRAPER_VERSION, USER_AGENT
+from .config import MAX_CONCURRENCY, SCRAPER_VERSION, UK_ONLY, USER_AGENT
+from .location import NON_UK, classify_location
 from .matching import detect_work_arrangement, match_title, normalise, parse_salary
 from .models import CompanyResult, Job, Posting, make_job_id, utc_now
 
@@ -50,6 +51,7 @@ def build_job(company: str, posting: Posting, keyword: str, detail: str | None) 
         company=company,
         title=normalise(posting.title),
         location=normalise(posting.location) or None,
+        location_region=classify_location(posting.location, body),
         work_arrangement=arrangement,
         work_arrangement_detail=arr_detail,
         work_arrangement_confidence=confidence,
@@ -61,6 +63,18 @@ def build_job(company: str, posting: Posting, keyword: str, detail: str | None) 
         scraped_at_utc=utc_now(),
         matched_keyword=keyword,
     )
+
+
+def _keep(result: CompanyResult, job: Job) -> None:
+    """Record a matched job, unless the UK filter rules it out.
+
+    Only a confidently non-UK location is dropped; "unknown" is kept and
+    flagged, so a job is never silently binned for an unreadable location.
+    """
+    if UK_ONLY and job.location_region == NON_UK:
+        result.excluded_non_uk += 1
+        return
+    result.jobs.append(job)
 
 
 async def run_company(company: dict, client: httpx.AsyncClient, browser) -> CompanyResult:
@@ -97,14 +111,18 @@ async def run_company(company: dict, client: httpx.AsyncClient, browser) -> Comp
                         detail = await enrich_with_browser(browser, posting.url)
                 except Exception as e:  # noqa: BLE001 - enrichment is best-effort
                     log(f"    [{name}] enrich failed for {posting.url}: {type(e).__name__}: {e}")
-            result.jobs.append(build_job(name, posting, keyword, detail))
+            _keep(result, build_job(name, posting, keyword, detail))
 
         # Anything past the enrichment cap still gets reported, unenriched.
         for posting, keyword in matched[MAX_ENRICH_PER_COMPANY:]:
-            result.jobs.append(build_job(name, posting, keyword, None))
+            _keep(result, build_job(name, posting, keyword, None))
 
         flag = "WARN" if result.postings_seen == 0 else "ok  "
-        log(f"  {flag} {name}: {result.postings_seen} seen, {len(result.jobs)} matched")
+        dropped = f", {result.excluded_non_uk} non-UK dropped" if result.excluded_non_uk else ""
+        log(
+            f"  {flag} {name}: {result.postings_seen} seen, "
+            f"{len(result.jobs)} matched{dropped}"
+        )
 
     except Exception as e:  # noqa: BLE001 - one company must never kill the run
         result.error = f"{type(e).__name__}: {str(e)[:300]}"
@@ -149,6 +167,11 @@ async def scrape_all(companies: list[dict]) -> dict:
             "companies_succeeded": len(succeeded),
             "total_postings_seen": sum(r.postings_seen for r in results),
             "total_postings_matched": len(jobs),
+            # How many matching roles were dropped for being outside the UK.
+            # Kept visible so a thin week is distinguishable from an overly
+            # aggressive filter.
+            "total_postings_excluded_non_uk": sum(r.excluded_non_uk for r in results),
+            "uk_filter_enabled": UK_ONLY,
             "companies_failed": [
                 {"name": r.name, "url": r.url, "error": r.error}
                 for r in results
