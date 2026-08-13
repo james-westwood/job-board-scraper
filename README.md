@@ -14,6 +14,9 @@ Every run writes:
 - `output/latest.json` — the current run, always overwritten
 - `output/runs/YYYY-MM-DD.json` — a dated copy, kept for history
 
+**Handing this to a Claude session?** See [HANDOFF.md](HANDOFF.md) for a paste-ready
+prompt and notes on reading the fields.
+
 The consuming session fetches the raw URL:
 
 ```
