@@ -110,6 +110,10 @@ EXTRACT_JS = """
 NON_JOB_HREF = re.compile(
     r"/(blog|news|article|insight|press|media|resource|webinar|podcast|event|"
     r"case-stud|white-?paper|report|story|stories|guide|video)s?[/\-_?]|"
+    # Team directories: an employee profile card reads exactly like a job card,
+    # since it pairs a name with a job title. Fathom's careers site lists staff
+    # as "Alex Marshall Senior Machine Learning Engineer".
+    r"/(people|team|staff|leadership|profile|author|colleague|employee)s?[/\-_?]|"
     r"/\d{4}/\d{2}/",
     re.I,
 )

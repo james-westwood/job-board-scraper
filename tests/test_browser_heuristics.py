@@ -42,6 +42,14 @@ def test_accepts_real_postings(href, text):
         ),
         ("https://example.com/blog/how-we-built-our-data-platform", "How we built our data platform"),
         ("https://example.com/news/2026/01/hiring-a-data-scientist", "Hiring a data scientist"),
+        # Team directory entries pair a person's name with their job title, so
+        # they look exactly like job cards. Real case from Fathom's site.
+        (
+            "https://careers.fathom.global/en-GB/people/3413712-alex-marshall",
+            "Alex Marshall Senior Machine Learning Engineer",
+        ),
+        ("https://example.com/team/jane-smith", "Jane Smith Data Scientist"),
+        ("https://example.com/about/leadership/head-of-data", "Head of Data Science"),
     ],
 )
 def test_rejects_non_postings(href, text):
