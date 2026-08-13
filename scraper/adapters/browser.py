@@ -307,11 +307,13 @@ async def scrape_with_browser(browser: Browser, company: dict) -> list[Posting]:
             await page.goto(
                 company["careers_url"], wait_until="domcontentloaded", timeout=PAGE_TIMEOUT_MS
             )
-        except PWTimeout:
-            # Heavy SPAs (Notion-hosted boards especially) can miss
-            # domcontentloaded inside the budget while still being perfectly
-            # renderable. Retry accepting the navigation as soon as it commits,
-            # then give the app a fixed window to draw itself.
+        except (PWTimeout, PlaywrightError):
+            # Two things land here. Heavy SPAs (Notion-hosted boards especially)
+            # miss domcontentloaded inside the budget while still being
+            # perfectly renderable. And some sites are simply slow or flaky from
+            # a datacentre IP -- Aira succeeds locally but ERR_TIMED_OUTs from
+            # GitHub's US runners. Retry accepting the navigation as soon as it
+            # commits, then give the app a fixed window to draw itself.
             await page.goto(company["careers_url"], wait_until="commit",
                             timeout=PAGE_TIMEOUT_MS)
             await page.wait_for_timeout(6000)

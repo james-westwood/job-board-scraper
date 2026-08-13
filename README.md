@@ -136,6 +136,10 @@ file never reaches the consumer.
   sit in `companies_no_postings` until they publish something.
 - `total_postings_seen` is exact for API adapters and approximate for browser ones, where
   it counts link candidates rather than confirmed postings.
+- **Results vary between a local run and CI.** GitHub's runners are US-based, and several
+  of these UK sites are slower or more defensive from a datacentre IP — Aira, for one,
+  works locally but has timed out from Actions. Failures are retried once and then
+  reported, so this shows up honestly in `companies_failed` rather than as a silent gap.
 - **No location filter.** The criteria in the spec are title-only, so US and APAC roles do
   come through (BP, Workiva and Teledyne are the noisy ones). Easy to add if wanted.
 
