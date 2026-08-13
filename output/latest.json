@@ -1,13 +1,18 @@
 {
   "run_metadata": {
-    "run_started_utc": "2026-08-13T23:28:08Z",
-    "run_finished_utc": "2026-08-13T23:29:08Z",
+    "run_started_utc": "2026-08-13T23:31:00Z",
+    "run_finished_utc": "2026-08-13T23:32:07Z",
     "scraper_version": "1.0.0",
     "companies_attempted": 34,
-    "companies_succeeded": 32,
-    "total_postings_seen": 1706,
-    "total_postings_matched": 21,
+    "companies_succeeded": 31,
+    "total_postings_seen": 1670,
+    "total_postings_matched": 22,
     "companies_failed": [
+      {
+        "name": "Aira",
+        "url": "https://career.airahome.com/jobs",
+        "error": "Error: Page.goto: net::ERR_TIMED_OUT at https://career.airahome.com/jobs\nCall log:\n  - navigating to \"https://career.airahome.com/jobs\", waiting until \"commit\"\n"
+      },
       {
         "name": "ScottishPower",
         "url": "https://www.scottishpower.jobs/",
@@ -45,6 +50,10 @@
         "url": "https://www.treeconomy.co/"
       },
       {
+        "name": "Climate X",
+        "url": "https://www.climate-x.com/careers"
+      },
+      {
         "name": "Piclo",
         "url": "https://www.piclo.com/careers"
       },
@@ -67,7 +76,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Malaysia---Kuala-Lumpur/Senior-Data-Engineer_RQ114044",
       "job_id": "scrape:bp-pulse:3b96e481d1c7",
-      "scraped_at_utc": "2026-08-13T23:28:24Z",
+      "scraped_at_utc": "2026-08-13T23:31:19Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -82,7 +91,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Malaysia---Kuala-Lumpur/Senior-Data-Engineer_RQ114043",
       "job_id": "scrape:bp-pulse:63ee52000764",
-      "scraped_at_utc": "2026-08-13T23:28:24Z",
+      "scraped_at_utc": "2026-08-13T23:31:19Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -97,7 +106,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/BR-Sao-Paulo---BTC-Technology/Senior-Data-Scientist_RQ104648",
       "job_id": "scrape:bp-pulse:153f362a1073",
-      "scraped_at_utc": "2026-08-13T23:28:25Z",
+      "scraped_at_utc": "2026-08-13T23:31:19Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -112,7 +121,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Brazil---So-Paulo/Senior-Data-Engineer_RQ105265",
       "job_id": "scrape:bp-pulse:dadccecc30bf",
-      "scraped_at_utc": "2026-08-13T23:28:25Z",
+      "scraped_at_utc": "2026-08-13T23:31:20Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -127,7 +136,7 @@
       "salary_max_gbp": null,
       "url": "https://jobs.ashbyhq.com/Lime/0bb8c755-c283-43c6-894a-31ec64f32085",
       "job_id": "scrape:lime:9864fd58e64a",
-      "scraped_at_utc": "2026-08-13T23:28:16Z",
+      "scraped_at_utc": "2026-08-13T23:31:09Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -142,7 +151,7 @@
       "salary_max_gbp": null,
       "url": "https://jobs.ashbyhq.com/Lime/bb6389a6-f1e3-4f47-9770-1ff93da53530",
       "job_id": "scrape:lime:69fe7bdc197b",
-      "scraped_at_utc": "2026-08-13T23:28:16Z",
+      "scraped_at_utc": "2026-08-13T23:31:09Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -157,7 +166,22 @@
       "salary_max_gbp": null,
       "url": "https://jobs.ashbyhq.com/Lime/7a54538e-d7d5-4169-98c8-8d3363895409",
       "job_id": "scrape:lime:9e09d9ccc24b",
-      "scraped_at_utc": "2026-08-13T23:28:16Z",
+      "scraped_at_utc": "2026-08-13T23:31:09Z",
+      "matched_keyword": "machine learning engineer"
+    },
+    {
+      "company": "Fathom",
+      "title": "Alex Marshall Senior Machine Learning Engineer",
+      "location": null,
+      "work_arrangement": null,
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "unknown",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://careers.fathom.global/en-GB/people/3976816-alex-marshall",
+      "job_id": "scrape:fathom:4bfe25ce1059",
+      "scraped_at_utc": "2026-08-13T23:31:22Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -172,7 +196,7 @@
       "salary_max_gbp": null,
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4702478101",
       "job_id": "scrape:overstory:67e4bf2642a6",
-      "scraped_at_utc": "2026-08-13T23:28:29Z",
+      "scraped_at_utc": "2026-08-13T23:31:27Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -187,7 +211,7 @@
       "salary_max_gbp": null,
       "url": "https://greyparrotai.recruitee.com/o/lead-data-scientist",
       "job_id": "scrape:greyparrot:b7c29c5c4260",
-      "scraped_at_utc": "2026-08-13T23:28:25Z",
+      "scraped_at_utc": "2026-08-13T23:31:23Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -202,7 +226,7 @@
       "salary_max_gbp": null,
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/Madrid/Data-Scientist--Parameta-Solutions--Madrid-_R5691",
       "job_id": "scrape:icap-energy-as:f02bc8861e6b",
-      "scraped_at_utc": "2026-08-13T23:28:30Z",
+      "scraped_at_utc": "2026-08-13T23:31:31Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -217,7 +241,7 @@
       "salary_max_gbp": null,
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/Manila/Data-Engineer--Trade-Surveillance-_R4991",
       "job_id": "scrape:icap-energy-as:3ce6520f2707",
-      "scraped_at_utc": "2026-08-13T23:28:30Z",
+      "scraped_at_utc": "2026-08-13T23:31:31Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -232,7 +256,7 @@
       "salary_max_gbp": null,
       "url": "https://aecom.com/careers/ai-engineering/",
       "job_id": "scrape:aecom:2bfadf11ee61",
-      "scraped_at_utc": "2026-08-13T23:28:44Z",
+      "scraped_at_utc": "2026-08-13T23:31:50Z",
       "matched_keyword": "ai engineer"
     },
     {
@@ -247,7 +271,7 @@
       "salary_max_gbp": null,
       "url": "https://aecom.jobs/singapore-sgp/senior-ai-engineer/F35D5EB34E8C48C2AC75C52CD7B0BCE3/job/",
       "job_id": "scrape:aecom:db89e84fe958",
-      "scraped_at_utc": "2026-08-13T23:28:47Z",
+      "scraped_at_utc": "2026-08-13T23:31:56Z",
       "matched_keyword": "ai engineer"
     },
     {
@@ -262,7 +286,7 @@
       "salary_max_gbp": null,
       "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Greater-London/Senior-Full-Stack-Engineer---Trader-Marks---Market-Data-Platforms_R0087714",
       "job_id": "scrape:centrica-energy:f4634d1e40fd",
-      "scraped_at_utc": "2026-08-13T23:28:33Z",
+      "scraped_at_utc": "2026-08-13T23:31:34Z",
       "matched_keyword": "data platform"
     },
     {
@@ -277,7 +301,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/USA---Remote/Sr-Machine-Learning-Engineering-Manager---AI-Quality-and-Governance_R12156-1",
       "job_id": "scrape:workiva:610550ab11d7",
-      "scraped_at_utc": "2026-08-13T23:28:34Z",
+      "scraped_at_utc": "2026-08-13T23:31:33Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -292,7 +316,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/USA---Remote/Staff-Data-Engineer_R12046",
       "job_id": "scrape:workiva:57c50d7571e0",
-      "scraped_at_utc": "2026-08-13T23:28:35Z",
+      "scraped_at_utc": "2026-08-13T23:31:34Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -307,7 +331,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/USA---Remote/Staff-Machine-Learning-Engineer_R11948",
       "job_id": "scrape:workiva:8e0555333224",
-      "scraped_at_utc": "2026-08-13T23:28:35Z",
+      "scraped_at_utc": "2026-08-13T23:31:34Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -322,7 +346,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
       "job_id": "scrape:workiva:971fa729309e",
-      "scraped_at_utc": "2026-08-13T23:28:35Z",
+      "scraped_at_utc": "2026-08-13T23:31:34Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -337,7 +361,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Staff-Machine-Learning-Engineer_R11542",
       "job_id": "scrape:workiva:4e2a1c48880c",
-      "scraped_at_utc": "2026-08-13T23:28:36Z",
+      "scraped_at_utc": "2026-08-13T23:31:34Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -352,7 +376,7 @@
       "salary_max_gbp": null,
       "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Rancho-Cordova-CA-TDY/Senior-Analytics-Engineer--ERP--Manufacturing---Power-BI-_REQ35431-1",
       "job_id": "scrape:teledyne-energy-systems:abb1cf7d11bf",
-      "scraped_at_utc": "2026-08-13T23:28:56Z",
+      "scraped_at_utc": "2026-08-13T23:31:51Z",
       "matched_keyword": "analytics engineer"
     },
     {
@@ -367,7 +391,7 @@
       "salary_max_gbp": null,
       "url": "https://gridbeyond.bamboohr.com/careers/127",
       "job_id": "scrape:gridbeyond:a53c9017259d",
-      "scraped_at_utc": "2026-08-13T23:28:36Z",
+      "scraped_at_utc": "2026-08-13T23:31:36Z",
       "matched_keyword": "data engineer"
     }
   ]
