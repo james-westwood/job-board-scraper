@@ -1,0 +1,91 @@
+name: Weekly job scrape
+
+on:
+  schedule:
+    # 06:00 UTC Monday -- 30 min before the weekly Claude session reads the output.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated company name substrings (blank = all)'
+        required: false
+        default: ''
+      adapter:
+        description: 'Limit to one adapter (workday, browser, pinpoint, ...)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --group dev
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('uv.lock') }}
+          restore-keys: playwright-${{ runner.os }}-
+
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
+
+      - name: Run unit tests
+        run: uv run pytest -q
+
+      - name: Scrape
+        run: |
+          uv run python -m scraper.run \
+            ${{ inputs.only && format('--only "{0}"', inputs.only) || '' }} \
+            ${{ inputs.adapter && format('--adapter {0}', inputs.adapter) || '' }}
+
+      - name: Validate output against the agreed schema
+        run: uv run python scripts/validate_output.py output/latest.json
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/
+          if git diff --staged --quiet; then
+            echo "No change in output; nothing to commit."
+          else
+            git commit -m "Job scrape $(date -u +'%Y-%m-%d %H:%M UTC')"
+            # The schedule is weekly, but a manual dispatch can race a push.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Summary
+        if: always()
+        run: uv run python scripts/summarise_run.py >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload output as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-output
+          path: output/
+          retention-days: 30

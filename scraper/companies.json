@@ -1,0 +1,272 @@
+[
+  {
+    "name": "OVO Energy",
+    "sector": "energy",
+    "careers_url": "https://careers.ovo.com/opportunities/",
+    "adapter": "browser"
+  },
+  {
+    "name": "NESO (National Energy System Operator)",
+    "sector": "energy",
+    "careers_url": "https://neso.wd103.myworkdayjobs.com/Careers",
+    "adapter": "workday",
+    "config": {
+      "tenant": "neso",
+      "host": "wd103",
+      "site": "Careers"
+    }
+  },
+  {
+    "name": "Aira",
+    "sector": "energy",
+    "careers_url": "https://career.airahome.com/jobs",
+    "adapter": "browser",
+    "notes": "Teamtailor-hosted; public API needs a key, so render it instead."
+  },
+  {
+    "name": "ScottishPower",
+    "sector": "energy",
+    "careers_url": "https://www.scottishpower.jobs/",
+    "adapter": "browser",
+    "notes": "Refuses plain HTTP from datacentre IPs; may fail from GitHub runners."
+  },
+  {
+    "name": "Good Energy",
+    "sector": "energy",
+    "careers_url": "https://careers.goodenergy.co.uk/",
+    "adapter": "pinpoint",
+    "config": {
+      "slug": "goodenergy"
+    },
+    "notes": "Handoff URL (goodenergy.co.uk/about/careers/) 404s; this is the live one."
+  },
+  {
+    "name": "Ecotricity",
+    "sector": "energy",
+    "careers_url": "https://jobs.ecotricity.co.uk/vacancies/vacancy-search-results.aspx",
+    "adapter": "browser",
+    "notes": "Handoff URL 404s; jobs.ecotricity.co.uk is the board, this is its results page."
+  },
+  {
+    "name": "ev.energy",
+    "sector": "ev",
+    "careers_url": "https://evenergy.careers.hibob.com/jobs",
+    "adapter": "browser",
+    "notes": "platform.ev.energy/careers only links out; this is the HiBob board's job index."
+  },
+  {
+    "name": "GRIDSERVE",
+    "sector": "ev",
+    "careers_url": "https://www.gridserve.com/careers/",
+    "adapter": "browser"
+  },
+  {
+    "name": "Connected Kerb",
+    "sector": "ev",
+    "careers_url": "https://www.connectedkerb.com/careers",
+    "adapter": "workable",
+    "config": {
+      "slug": "connected-kerb"
+    }
+  },
+  {
+    "name": "BP Pulse",
+    "sector": "ev",
+    "careers_url": "https://careers.bp.com/",
+    "adapter": "workday",
+    "config": {
+      "tenant": "bpinternational",
+      "host": "wd3",
+      "site": "bpCareers"
+    },
+    "notes": "Handoff URL 404s; bppulse.com 'Careers' link resolves to BP's Workday."
+  },
+  {
+    "name": "Zap-Map",
+    "sector": "ev",
+    "careers_url": "https://www.zapmap.com/careers",
+    "adapter": "browser",
+    "notes": "Rebranded zap-map.com -> zapmap.com; handoff URL 404s."
+  },
+  {
+    "name": "Lime",
+    "sector": "ev/mobility",
+    "careers_url": "https://jobs.ashbyhq.com/Lime",
+    "adapter": "browser",
+    "notes": "Ashby board renders, but the public posting-api slug 404s, so render it."
+  },
+  {
+    "name": "Anglian Water",
+    "sector": "water",
+    "careers_url": "https://www.anglianwater.co.uk/careers/",
+    "adapter": "browser",
+    "notes": "403s plain HTTP; needs a real browser fingerprint."
+  },
+  {
+    "name": "Fathom",
+    "sector": "water",
+    "careers_url": "https://careers.fathom.global/",
+    "adapter": "browser",
+    "notes": "Main site only links out; real board is Teamtailor-hosted here."
+  },
+  {
+    "name": "Previsico",
+    "sector": "water",
+    "careers_url": "https://previsico.com/careers/",
+    "adapter": "browser"
+  },
+  {
+    "name": "South East Water",
+    "sector": "water",
+    "careers_url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site",
+    "adapter": "workday",
+    "config": {
+      "tenant": "southeastwater",
+      "host": "wd103",
+      "site": "South_East_Water_Careers_site"
+    }
+  },
+  {
+    "name": "Southern Water",
+    "sector": "water",
+    "careers_url": "https://www.southernwater.co.uk/careers",
+    "adapter": "browser"
+  },
+  {
+    "name": "Thames Water",
+    "sector": "water",
+    "careers_url": "https://jobs.thameswater.co.uk/Search.aspx",
+    "adapter": "browser",
+    "notes": "careers.thameswater.co.uk is marketing only; vacancies live here."
+  },
+  {
+    "name": "BeZero Carbon",
+    "sector": "carbon",
+    "careers_url": "https://bezerocarbon.notion.site/Careers-at-BeZero-Carbon-27ecc087c48c80f68544d42982f24bb8",
+    "adapter": "browser",
+    "notes": "Handoff URL 404s; careers live on a Notion page linked from the homepage."
+  },
+  {
+    "name": "Space Intelligence",
+    "sector": "carbon",
+    "careers_url": "https://www.space-intelligence.com/careers/",
+    "adapter": "browser"
+  },
+  {
+    "name": "Overstory",
+    "sector": "carbon",
+    "careers_url": "https://www.overstory.com/careers",
+    "adapter": "browser"
+  },
+  {
+    "name": "Treeconomy",
+    "sector": "carbon",
+    "careers_url": "https://www.treeconomy.co/",
+    "adapter": "browser",
+    "notes": "No careers page found on the site; scraping the homepage so a real page appearing later is picked up."
+  },
+  {
+    "name": "Climate X",
+    "sector": "carbon/climate-risk",
+    "careers_url": "https://www.climate-x.com/careers",
+    "adapter": "browser"
+  },
+  {
+    "name": "Greyparrot",
+    "sector": "environment/waste-AI",
+    "careers_url": "https://greyparrotai.recruitee.com/",
+    "adapter": "recruitee",
+    "config": {
+      "slug": "greyparrotai"
+    },
+    "notes": "Climatebase profile in the handoff is a directory listing, not their board."
+  },
+  {
+    "name": "Renewable Energy Systems (RES)",
+    "sector": "energy",
+    "careers_url": "https://www.res-group.com/careers/",
+    "adapter": "browser"
+  },
+  {
+    "name": "ICAP Energy AS",
+    "sector": "energy",
+    "careers_url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP",
+    "adapter": "workday",
+    "config": {
+      "tenant": "tp",
+      "host": "wd107",
+      "site": "TP-ICAP"
+    },
+    "notes": "Part of TP ICAP; their Workday tenant covers the group."
+  },
+  {
+    "name": "AECOM",
+    "sector": "environmental consultancy",
+    "careers_url": "https://aecom.jobs",
+    "adapter": "browser"
+  },
+  {
+    "name": "Centrica Energy",
+    "sector": "energy",
+    "careers_url": "https://centrica.wd3.myworkdayjobs.com/Centrica",
+    "adapter": "workday",
+    "config": {
+      "tenant": "centrica",
+      "host": "wd3",
+      "site": "Centrica"
+    }
+  },
+  {
+    "name": "Workiva",
+    "sector": "sustainability reporting software",
+    "careers_url": "https://workiva.wd503.myworkdayjobs.com/careers",
+    "adapter": "workday",
+    "config": {
+      "tenant": "workiva",
+      "host": "wd503",
+      "site": "careers"
+    }
+  },
+  {
+    "name": "Teledyne Energy Systems",
+    "sector": "energy hardware",
+    "careers_url": "https://flir.wd1.myworkdayjobs.com/flircareers",
+    "adapter": "workday",
+    "config": {
+      "tenant": "flir",
+      "host": "wd1",
+      "site": "flircareers"
+    },
+    "notes": "Teledyne runs group hiring through the FLIR Workday tenant (~700 roles)."
+  },
+  {
+    "name": "Piclo",
+    "sector": "energy flexibility marketplace",
+    "careers_url": "https://www.piclo.com/careers",
+    "adapter": "browser",
+    "notes": "Handoff URL (/about) has no jobs on it."
+  },
+  {
+    "name": "Flexitricity",
+    "sector": "demand response",
+    "careers_url": "https://flexitricity.com/about/careers",
+    "adapter": "browser",
+    "notes": "Handoff URL is the homepage, which redirects to /about."
+  },
+  {
+    "name": "GridBeyond",
+    "sector": "energy flexibility/AI",
+    "careers_url": "https://gridbeyond.com/about-us-2/careers-2/",
+    "adapter": "bamboohr",
+    "config": {
+      "slug": "gridbeyond"
+    },
+    "notes": "www.gridbeyond.com has a mismatched TLS cert; apex domain works."
+  },
+  {
+    "name": "Habitat Energy",
+    "sector": "battery storage optimisation",
+    "careers_url": "https://www.habitat.energy/careers",
+    "adapter": "browser"
+  }
+]
