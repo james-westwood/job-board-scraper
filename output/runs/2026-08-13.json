@@ -1,12 +1,12 @@
 {
   "run_metadata": {
-    "run_started_utc": "2026-08-13T23:41:33Z",
-    "run_finished_utc": "2026-08-13T23:42:37Z",
+    "run_started_utc": "2026-08-13T23:45:04Z",
+    "run_finished_utc": "2026-08-13T23:46:11Z",
     "scraper_version": "1.0.0",
     "companies_attempted": 34,
     "companies_succeeded": 32,
-    "total_postings_seen": 1707,
-    "total_postings_matched": 6,
+    "total_postings_seen": 1692,
+    "total_postings_matched": 5,
     "total_postings_excluded_non_uk": 16,
     "uk_filter_enabled": true,
     "companies_failed": [
@@ -47,6 +47,10 @@
         "url": "https://www.treeconomy.co/"
       },
       {
+        "name": "Climate X",
+        "url": "https://www.climate-x.com/careers"
+      },
+      {
         "name": "Piclo",
         "url": "https://www.piclo.com/careers"
       },
@@ -57,22 +61,6 @@
     ]
   },
   "jobs": [
-    {
-      "company": "Fathom",
-      "title": "Alex Marshall Senior Machine Learning Engineer",
-      "location": null,
-      "location_region": "unknown",
-      "work_arrangement": null,
-      "work_arrangement_detail": null,
-      "work_arrangement_confidence": "unknown",
-      "salary_raw": null,
-      "salary_min_gbp": null,
-      "salary_max_gbp": null,
-      "url": "https://careers.fathom.global/en-GB/people/3976816-alex-marshall",
-      "job_id": "scrape:fathom:4bfe25ce1059",
-      "scraped_at_utc": "2026-08-13T23:41:54Z",
-      "matched_keyword": "machine learning engineer"
-    },
     {
       "company": "Greyparrot",
       "title": "Lead Data Scientist",
@@ -86,7 +74,7 @@
       "salary_max_gbp": null,
       "url": "https://greyparrotai.recruitee.com/o/lead-data-scientist",
       "job_id": "scrape:greyparrot:b7c29c5c4260",
-      "scraped_at_utc": "2026-08-13T23:41:54Z",
+      "scraped_at_utc": "2026-08-13T23:45:27Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -102,7 +90,7 @@
       "salary_max_gbp": null,
       "url": "https://aecom.com/careers/ai-engineering/",
       "job_id": "scrape:aecom:2bfadf11ee61",
-      "scraped_at_utc": "2026-08-13T23:42:19Z",
+      "scraped_at_utc": "2026-08-13T23:45:58Z",
       "matched_keyword": "ai engineer"
     },
     {
@@ -118,7 +106,7 @@
       "salary_max_gbp": null,
       "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Greater-London/Senior-Full-Stack-Engineer---Trader-Marks---Market-Data-Platforms_R0087714",
       "job_id": "scrape:centrica-energy:f4634d1e40fd",
-      "scraped_at_utc": "2026-08-13T23:42:01Z",
+      "scraped_at_utc": "2026-08-13T23:45:37Z",
       "matched_keyword": "data platform"
     },
     {
@@ -134,7 +122,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
       "job_id": "scrape:workiva:971fa729309e",
-      "scraped_at_utc": "2026-08-13T23:42:03Z",
+      "scraped_at_utc": "2026-08-13T23:45:39Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -150,7 +138,7 @@
       "salary_max_gbp": null,
       "url": "https://gridbeyond.bamboohr.com/careers/127",
       "job_id": "scrape:gridbeyond:a53c9017259d",
-      "scraped_at_utc": "2026-08-13T23:42:05Z",
+      "scraped_at_utc": "2026-08-13T23:45:41Z",
       "matched_keyword": "data engineer"
     }
   ]
