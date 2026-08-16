@@ -114,6 +114,10 @@ NON_JOB_HREF = re.compile(
     # since it pairs a name with a job title. Fathom's careers site lists staff
     # as "Alex Marshall Senior Machine Learning Engineer".
     r"/(people|team|staff|leadership|profile|author|colleague|employee)s?[/\-_?]|"
+    # Legal/footer pages. Teamtailor sites carry a "Data & privacy" link that
+    # otherwise reads as a near miss on the word "data".
+    r"/(privacy|cookies?|cookie-policy|legal|terms|gdpr|accessibility|"
+    r"data-privacy|data-protection)(?:[/?#\-]|$)|"
     r"/\d{4}/\d{2}/",
     re.I,
 )

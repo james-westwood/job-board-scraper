@@ -23,10 +23,22 @@ from playwright.async_api import async_playwright
 
 from .adapters.api import API_ADAPTERS
 from .adapters.browser import enrich_with_browser, scrape_with_browser
-from .config import MAX_CONCURRENCY, SCRAPER_VERSION, UK_ONLY, USER_AGENT
+from .config import (
+    MAX_CONCURRENCY,
+    MAX_NEAR_MISSES_PER_COMPANY,
+    SCRAPER_VERSION,
+    UK_ONLY,
+    USER_AGENT,
+)
 from .location import NON_UK, classify_location
-from .matching import detect_work_arrangement, match_title, normalise, parse_salary
-from .models import CompanyResult, Job, Posting, make_job_id, utc_now
+from .matching import (
+    detect_work_arrangement,
+    match_title,
+    near_miss_token,
+    normalise,
+    parse_salary,
+)
+from .models import CompanyResult, Job, NearMiss, Posting, make_job_id, utc_now
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = ROOT / "output"
@@ -95,9 +107,36 @@ async def run_company(company: dict, client: httpx.AsyncClient, browser) -> Comp
 
         matched: list[tuple[Posting, str]] = []
         for p in postings:
+            if not p.url:
+                continue
             kw = match_title(p.title)
-            if kw and p.url:
+            if kw:
                 matched.append((p, kw))
+                continue
+            # Not a match, but data-adjacent enough to be worth a human glance.
+            token = near_miss_token(p.title)
+            if token and len(result.near_misses) < MAX_NEAR_MISSES_PER_COMPANY:
+                # Title is folded in so eligibility wording such as
+                # "(US Citizenship Required)" is seen; the location field is
+                # still checked first and wins where it is decisive.
+                region = classify_location(
+                    p.location, " ".join(filter(None, [p.title, p.description]))
+                )
+                # Same UK rule as the main list, but based only on the listing
+                # -- near misses never trigger a detail fetch.
+                if not (UK_ONLY and region == NON_UK):
+                    result.near_misses.append(
+                        NearMiss(
+                            company=name,
+                            title=normalise(p.title),
+                            location=normalise(p.location) or None,
+                            location_region=region,
+                            url=p.url,
+                            job_id=make_job_id(name, p.url),
+                            scraped_at_utc=utc_now(),
+                            near_miss_token=token,
+                        )
+                    )
 
         for posting, keyword in matched[:MAX_ENRICH_PER_COMPANY]:
             detail = None
@@ -119,9 +158,10 @@ async def run_company(company: dict, client: httpx.AsyncClient, browser) -> Comp
 
         flag = "WARN" if result.postings_seen == 0 else "ok  "
         dropped = f", {result.excluded_non_uk} non-UK dropped" if result.excluded_non_uk else ""
+        near = f", {len(result.near_misses)} near" if result.near_misses else ""
         log(
             f"  {flag} {name}: {result.postings_seen} seen, "
-            f"{len(result.jobs)} matched{dropped}"
+            f"{len(result.jobs)} matched{near}{dropped}"
         )
 
     except Exception as e:  # noqa: BLE001 - one company must never kill the run
@@ -156,6 +196,7 @@ async def scrape_all(companies: list[dict]) -> dict:
 
     finished = utc_now()
     jobs = [j for r in results for j in r.jobs]
+    near_misses = [n for r in results for n in r.near_misses]
     succeeded = [r for r in results if r.succeeded]
 
     return {
@@ -171,6 +212,7 @@ async def scrape_all(companies: list[dict]) -> dict:
             # Kept visible so a thin week is distinguishable from an overly
             # aggressive filter.
             "total_postings_excluded_non_uk": sum(r.excluded_non_uk for r in results),
+            "total_near_misses": len(near_misses),
             "uk_filter_enabled": UK_ONLY,
             "companies_failed": [
                 {"name": r.name, "url": r.url, "error": r.error}
@@ -188,6 +230,10 @@ async def scrape_all(companies: list[dict]) -> dict:
             ],
         },
         "jobs": [j.to_dict() for j in jobs],
+        # Data-adjacent titles that did not clear the strict filter. Kept out of
+        # jobs[] so the main list stays clean, but reported so the filter's
+        # blind spots are visible rather than silent.
+        "near_misses": [n.to_dict() for n in near_misses],
     }
 
 
@@ -230,7 +276,8 @@ def main() -> int:
     m = report["run_metadata"]
     log(
         f"\nDone: {m['companies_succeeded']}/{m['companies_attempted']} companies, "
-        f"{m['total_postings_seen']} postings seen, {m['total_postings_matched']} matched."
+        f"{m['total_postings_seen']} postings seen, {m['total_postings_matched']} matched, "
+        f"{m['total_near_misses']} near misses."
     )
     if m["companies_failed"]:
         log("Failed:")

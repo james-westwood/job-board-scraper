@@ -46,6 +46,17 @@ JOB_FIELDS = {
     "matched_keyword": (str,),
 }
 
+NEAR_MISS_FIELDS = {
+    "company": (str,),
+    "title": (str,),
+    "location": (str, type(None)),
+    "location_region": (str,),
+    "url": (str,),
+    "job_id": (str,),
+    "scraped_at_utc": (str,),
+    "near_miss_token": (str,),
+}
+
 
 def validate(path: Path) -> list[str]:
     errors: list[str] = []
@@ -57,7 +68,7 @@ def validate(path: Path) -> list[str]:
 
     if not isinstance(data, dict):
         return [f"{path}: top level must be an object"]
-    for key in ("run_metadata", "jobs"):
+    for key in ("run_metadata", "jobs", "near_misses"):
         if key not in data:
             errors.append(f"missing top-level key: {key}")
     if errors:
@@ -151,6 +162,44 @@ def validate(path: Path) -> list[str]:
         if not str(job.get("url", "")).startswith("http"):
             errors.append(f"{where}.url is not absolute: {job.get('url')!r}")
 
+    near = data["near_misses"]
+    if not isinstance(near, list):
+        return errors + ["near_misses must be a list"]
+
+    if isinstance(meta.get("total_near_misses"), int) and meta["total_near_misses"] != len(near):
+        errors.append(
+            f"total_near_misses ({meta['total_near_misses']}) "
+            f"does not equal len(near_misses) ({len(near)})"
+        )
+
+    job_ids = set(seen_ids)
+    for i, nm in enumerate(near):
+        where = f"near_misses[{i}]"
+        if not isinstance(nm, dict):
+            errors.append(f"{where} must be an object")
+            continue
+        for field, types in NEAR_MISS_FIELDS.items():
+            if field not in nm:
+                errors.append(f"{where} missing {field}")
+            elif not isinstance(nm[field], types):
+                errors.append(
+                    f"{where}.{field} has type {type(nm[field]).__name__}, "
+                    f"expected {'/'.join(t.__name__ for t in types)}"
+                )
+        if isinstance(nm.get("job_id"), str):
+            if not JOB_ID.match(nm["job_id"]):
+                errors.append(f"{where}.job_id malformed: {nm['job_id']!r}")
+            # A posting is either a match or a near miss, never both.
+            if nm["job_id"] in job_ids:
+                errors.append(
+                    f"{where}.job_id {nm['job_id']} also appears in jobs[] -- "
+                    "a posting must not be reported twice"
+                )
+        if nm.get("location_region") not in REGIONS:
+            errors.append(f"{where}.location_region invalid: {nm.get('location_region')!r}")
+        if not str(nm.get("url", "")).startswith("http"):
+            errors.append(f"{where}.url is not absolute: {nm.get('url')!r}")
+
     return errors
 
 
@@ -170,6 +219,7 @@ def main() -> int:
     data = json.loads(path.read_text(encoding="utf-8"))
     print(
         f"OK: {path} valid -- {len(data['jobs'])} jobs, "
+        f"{len(data['near_misses'])} near misses, "
         f"{data['run_metadata']['companies_succeeded']}/"
         f"{data['run_metadata']['companies_attempted']} companies succeeded."
     )

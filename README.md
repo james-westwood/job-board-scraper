@@ -73,6 +73,13 @@ Notes for the consuming side:
 - `companies_no_postings` (an addition to the original spec) lists companies that loaded
   fine but yielded nothing. That distinguishes "not hiring" from "the scraper went blind",
   which a bare `0` cannot.
+- **`near_misses`** is a separate top-level list of data-adjacent titles that did *not*
+  clear `INCLUDE_KEYWORDS` — NESO's "Lead AI Architect" and "Data Assurance Lead", South
+  East Water's "Investment Portfolio Data & Reporting Lead". The strict list is built
+  around "engineer"/"scientist" and goes blind to architect/lead/analyst phrasings.
+  Deliberately kept out of `jobs[]` so the main list stays clean, and never enriched (no
+  salary or work arrangement) so it costs no extra fetches. Exclusions still apply: a
+  "Data Science Intern" doesn't come back through this door.
 - **UK only.** Confidently non-UK postings are dropped and counted in
   `total_postings_excluded_non_uk`, so a thin week is distinguishable from an
   over-aggressive filter. A posting whose location can't be determined is **kept**, with

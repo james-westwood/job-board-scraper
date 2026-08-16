@@ -27,6 +27,39 @@ EXCLUDE_KEYWORDS = [
     "business development",
 ]
 
+# Titles that are data-adjacent but don't clear INCLUDE_KEYWORDS. These are
+# reported separately as "near misses" rather than dropped, because the strict
+# list has real blind spots: NESO advertised "Lead AI Architect" and "Data
+# Assurance Lead", South East Water an "Investment Portfolio Data & Reporting
+# Lead" -- all invisible to a keyword list built around "engineer"/"scientist".
+#
+# Deliberately excludes a bare "analyst": every company here has a dozen
+# compliance/quality/service analysts, and they would swamp the list. Anything
+# genuinely relevant ("Data Quality Analyst") is caught by the "data" token.
+NEAR_MISS_KEYWORDS = [
+    "data",
+    "ai",
+    "ml",
+    "machine learning",
+    "analytics",
+    "scientist",
+    "quantitative",
+    "quant",
+    "statistical",
+    "statistics",
+    "modelling",
+    "modeling",
+    "algorithm",
+    "algorithms",
+    "business intelligence",
+    "llm",
+    "generative ai",
+]
+
+# Per-company ceiling on near misses, so a big group-wide tenant can't flood
+# the report with loosely-related roles.
+MAX_NEAR_MISSES_PER_COMPANY = 25
+
 # Keep only UK (and undetermined) roles. Several tracked companies hire
 # globally -- BP, Workiva and Teledyne especially -- and their US/APAC postings
 # swamp the report otherwise. Postings whose location cannot be determined are

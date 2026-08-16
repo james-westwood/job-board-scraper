@@ -39,9 +39,12 @@ Please:
 3. For each new role, give me: company, title, location, work arrangement, salary if
    known, and the link. Flag anything where work_arrangement_confidence is not "stated"
    or location_region is "unknown" as needing a manual look.
-4. List run_metadata.companies_failed and companies_no_postings so I know what to check
+4. Then show me near_misses[] separately, under a clear "worth a glance" heading. These
+   are data-adjacent titles that didn't clear the strict filter. Don't mix them in with
+   the main list.
+5. List run_metadata.companies_failed and companies_no_postings so I know what to check
    by hand.
-5. Add the new roles to Job_Board_Watchlist.md so next week's diff is clean.
+6. Add the new roles to Job_Board_Watchlist.md so next week's diff is clean.
 ```
 
 ## Reading the output
@@ -57,6 +60,20 @@ collide with the `greenhouse:` / `ashby:` ids already tracked.
 | `work_arrangement_confidence` | `"stated"` = the page said so. `"inferred"` = deduced from weaker signals. `"unknown"` = nothing to go on. Only trust `"stated"` without checking. |
 | `salary_min_gbp` / `salary_max_gbp` | `null` unless a **sterling** figure was parsed confidently. USD/EUR postings keep `salary_raw` verbatim but are never converted. Always show `salary_raw` — it's there so a human can check the parse. |
 | `matched_keyword` | Which filter term caught it. Useful for spotting loose matches — e.g. a full-stack role caught by `"data platform"`. |
+
+## `near_misses` — the second list
+
+A separate top-level array, same shape as `jobs[]` but lighter: no salary and no work
+arrangement, because these are never enriched. These titles are data-adjacent but didn't
+match the strict keyword filter — things like "Lead AI Architect", "Data Assurance Lead"
+or "Investment Portfolio Data & Reporting Lead".
+
+Present them **separately from the main matches**, as roles worth a glance rather than
+recommendations. `near_miss_token` tells you which word caught it. The same UK filter and
+the same exclusions apply, and a posting never appears in both lists.
+
+If this list is consistently surfacing roles James acts on, that's a signal to widen
+`INCLUDE_KEYWORDS` in `scraper/config.py`.
 
 ## The three lists in `run_metadata`
 

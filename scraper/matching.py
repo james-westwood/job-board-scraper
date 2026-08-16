@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import re
 
-from .config import EXCLUDE_KEYWORDS, INCLUDE_KEYWORDS
+from .config import EXCLUDE_KEYWORDS, INCLUDE_KEYWORDS, NEAR_MISS_KEYWORDS
 
 _WS = re.compile(r"\s+")
 
@@ -32,6 +32,32 @@ def match_title(title: str) -> str | None:
         if kw in t:
             return kw
     return None
+
+
+# Whole-word matching, so "data" doesn't fire on "SCADA" and "ai" doesn't fire
+# on "Air Quality".
+_NEAR_MISS_RE = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in sorted(NEAR_MISS_KEYWORDS, key=len, reverse=True)) + r")\b",
+    re.IGNORECASE,
+)
+
+
+def near_miss_token(title: str) -> str | None:
+    """Return the data-adjacent word in a title that *didn't* clear the filter.
+
+    Only fires for titles that ``match_title`` rejected, and never for ones an
+    exclusion killed -- a "Data Science Intern" stays out rather than coming
+    back through this door.
+    """
+    t = normalise(title).lower()
+    if not t:
+        return None
+    if any(bad in t for bad in EXCLUDE_KEYWORDS):
+        return None
+    if match_title(title):
+        return None
+    m = _NEAR_MISS_RE.search(t)
+    return m.group(1).lower() if m else None
 
 
 # --------------------------------------------------------------------------

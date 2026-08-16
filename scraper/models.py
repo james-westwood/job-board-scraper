@@ -79,6 +79,36 @@ class Job:
 
 
 @dataclass
+class NearMiss:
+    """A data-adjacent role that didn't clear the strict title filter.
+
+    Reported so a human can glance at it. Deliberately lighter than a Job: no
+    detail page is fetched for these, so there's no salary or work arrangement.
+    """
+
+    company: str
+    title: str
+    location: str | None
+    location_region: str
+    url: str
+    job_id: str
+    scraped_at_utc: str
+    near_miss_token: str
+
+    def to_dict(self) -> dict:
+        return {
+            "company": self.company,
+            "title": self.title,
+            "location": self.location,
+            "location_region": self.location_region,
+            "url": self.url,
+            "job_id": self.job_id,
+            "scraped_at_utc": self.scraped_at_utc,
+            "near_miss_token": self.near_miss_token,
+        }
+
+
+@dataclass
 class CompanyResult:
     """Outcome of attempting one company."""
 
@@ -87,6 +117,7 @@ class CompanyResult:
     postings_seen: int = 0
     excluded_non_uk: int = 0
     jobs: list[Job] = field(default_factory=list)
+    near_misses: list[NearMiss] = field(default_factory=list)
     error: str | None = None
 
     @property

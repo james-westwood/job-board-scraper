@@ -33,7 +33,10 @@ _NON_UK_COUNTRIES = re.compile(
     r"\bpoland\b|\bromania\b|\bhungary\b|\bczech\b|\baustria\b|\bswitzerland\b|"
     r"\bsweden\b|\bnorway\b|\bdenmark\b|\bfinland\b|\bireland\b|\bisrael\b|"
     r"\buae\b|\bemirates\b|\bsaudi\b|\bqatar\b|\begypt\b|\bsouth africa\b|"
-    r"\bkenya\b|\bnigeria\b|\bturkey\b|\bgreece\b|\bbulgaria\b|\bukraine\b",
+    r"\bkenya\b|\bnigeria\b|\bturkey\b|\bgreece\b|\bbulgaria\b|\bukraine\b|"
+    # Eligibility requirements that only one country can satisfy.
+    r"\bus citizenship\b|\bu\.s\. citizenship\b|\bmust be a us citizen\b|"
+    r"\bgreen card\b|\bwork authorization in the (?:us|united states)\b",
     re.I,
 )
 

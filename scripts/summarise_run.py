@@ -15,6 +15,7 @@ def main() -> int:
 
     data = json.loads(path.read_text(encoding="utf-8"))
     m, jobs = data["run_metadata"], data["jobs"]
+    near = data.get("near_misses", [])
 
     print("## Job scrape\n")
     print(f"- **Companies:** {m['companies_succeeded']}/{m['companies_attempted']} succeeded")
@@ -39,6 +40,17 @@ def main() -> int:
             print(
                 f"| {j['company']} | {title} | {loc} | "
                 f"{arr} | {j['salary_raw'] or '—'} |"
+            )
+        print()
+
+    if near:
+        print("### Near misses — data-adjacent, didn't clear the filter\n")
+        print("| Company | Title | Location | Caught on |")
+        print("| --- | --- | --- | --- |")
+        for n in near:
+            print(
+                f"| {n['company']} | [{n['title']}]({n['url']}) | "
+                f"{n['location'] or '—'} | `{n['near_miss_token']}` |"
             )
         print()
 
