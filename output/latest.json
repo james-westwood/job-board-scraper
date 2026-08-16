@@ -1,7 +1,7 @@
 {
   "run_metadata": {
-    "run_started_utc": "2026-08-16T17:44:45Z",
-    "run_finished_utc": "2026-08-16T17:45:47Z",
+    "run_started_utc": "2026-08-16T17:46:50Z",
+    "run_finished_utc": "2026-08-16T17:47:57Z",
     "scraper_version": "1.0.0",
     "companies_attempted": 34,
     "companies_succeeded": 32,
@@ -71,7 +71,7 @@
       "salary_max_gbp": null,
       "url": "https://aecom.com/careers/ai-engineering/",
       "job_id": "scrape:aecom:2bfadf11ee61",
-      "scraped_at_utc": "2026-08-16T17:45:24Z",
+      "scraped_at_utc": "2026-08-16T17:47:40Z",
       "matched_keyword": "ai engineer"
     },
     {
@@ -87,7 +87,7 @@
       "salary_max_gbp": null,
       "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Greater-London/Senior-Full-Stack-Engineer---Trader-Marks---Market-Data-Platforms_R0087714",
       "job_id": "scrape:centrica-energy:f4634d1e40fd",
-      "scraped_at_utc": "2026-08-16T17:45:12Z",
+      "scraped_at_utc": "2026-08-16T17:47:23Z",
       "matched_keyword": "data platform"
     },
     {
@@ -103,7 +103,7 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
       "job_id": "scrape:workiva:971fa729309e",
-      "scraped_at_utc": "2026-08-16T17:45:15Z",
+      "scraped_at_utc": "2026-08-16T17:47:24Z",
       "matched_keyword": "machine learning engineer"
     },
     {
@@ -119,7 +119,7 @@
       "salary_max_gbp": null,
       "url": "https://gridbeyond.bamboohr.com/careers/127",
       "job_id": "scrape:gridbeyond:a53c9017259d",
-      "scraped_at_utc": "2026-08-16T17:45:16Z",
+      "scraped_at_utc": "2026-08-16T17:47:27Z",
       "matched_keyword": "data engineer"
     }
   ],
@@ -131,7 +131,7 @@
       "location_region": "uk",
       "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/Data-Assurance-Lead_JR100546",
       "job_id": "scrape:neso-national-energy-system-operator:fe17decabcc6",
-      "scraped_at_utc": "2026-08-16T17:44:47Z",
+      "scraped_at_utc": "2026-08-16T17:46:53Z",
       "near_miss_token": "data"
     },
     {
@@ -141,7 +141,7 @@
       "location_region": "unknown",
       "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/Lead-AI-Architect_JR100426",
       "job_id": "scrape:neso-national-energy-system-operator:5ebba98d08fd",
-      "scraped_at_utc": "2026-08-16T17:44:47Z",
+      "scraped_at_utc": "2026-08-16T17:46:53Z",
       "near_miss_token": "ai"
     },
     {
@@ -151,7 +151,7 @@
       "location_region": "unknown",
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Malaysia---Kuala-Lumpur/Technical-Delivery-Senior-Manager---Data---AI_RQ107049",
       "job_id": "scrape:bp-pulse:617d9e9ca603",
-      "scraped_at_utc": "2026-08-16T17:45:02Z",
+      "scraped_at_utc": "2026-08-16T17:47:10Z",
       "near_miss_token": "data"
     },
     {
@@ -161,7 +161,7 @@
       "location_region": "uk",
       "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Investment-Portfolio-Data---Reporting-Lead_JR101265-1",
       "job_id": "scrape:south-east-water:f8dfbc395922",
-      "scraped_at_utc": "2026-08-16T17:44:57Z",
+      "scraped_at_utc": "2026-08-16T17:47:07Z",
       "near_miss_token": "data"
     },
     {
@@ -171,7 +171,7 @@
       "location_region": "uk",
       "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Pembury-Kent/Process-Scientist_JR101149",
       "job_id": "scrape:south-east-water:9d2a5c7a21ac",
-      "scraped_at_utc": "2026-08-16T17:44:57Z",
+      "scraped_at_utc": "2026-08-16T17:47:07Z",
       "near_miss_token": "scientist"
     },
     {
@@ -181,7 +181,7 @@
       "location_region": "unknown",
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4488307101",
       "job_id": "scrape:overstory:ef135c1a537d",
-      "scraped_at_utc": "2026-08-16T17:45:06Z",
+      "scraped_at_utc": "2026-08-16T17:47:16Z",
       "near_miss_token": "machine learning"
     },
     {
@@ -191,7 +191,7 @@
       "location_region": "unknown",
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4908204101",
       "job_id": "scrape:overstory:c6342a025239",
-      "scraped_at_utc": "2026-08-16T17:45:06Z",
+      "scraped_at_utc": "2026-08-16T17:47:16Z",
       "near_miss_token": "machine learning"
     },
     {
@@ -201,7 +201,7 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/Belfast/Client-Data-Analyst-1---12-Month-FTC_R5714",
       "job_id": "scrape:icap-energy-as:cc30a1e60f08",
-      "scraped_at_utc": "2026-08-16T17:45:09Z",
+      "scraped_at_utc": "2026-08-16T17:47:15Z",
       "near_miss_token": "data"
     },
     {
@@ -211,7 +211,7 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
       "job_id": "scrape:icap-energy-as:c4b08d3a774d",
-      "scraped_at_utc": "2026-08-16T17:45:09Z",
+      "scraped_at_utc": "2026-08-16T17:47:15Z",
       "near_miss_token": "ai"
     },
     {
@@ -221,7 +221,7 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Equities-Execution-Data-Analyst---12-month-Fixed-Term-Contract_R5525",
       "job_id": "scrape:icap-energy-as:6223332153ae",
-      "scraped_at_utc": "2026-08-16T17:45:09Z",
+      "scraped_at_utc": "2026-08-16T17:47:15Z",
       "near_miss_token": "data"
     },
     {
@@ -231,7 +231,7 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Associate-AI-Engineer_R5561",
       "job_id": "scrape:icap-energy-as:dcc338085d8b",
-      "scraped_at_utc": "2026-08-16T17:45:09Z",
+      "scraped_at_utc": "2026-08-16T17:47:15Z",
       "near_miss_token": "ai"
     },
     {
@@ -241,7 +241,7 @@
       "location_region": "unknown",
       "url": "https://aecom.jobs/london-gbr/ai-solution-engineer/3723540A868A4C65A5BCBC91458E3A30/job/",
       "job_id": "scrape:aecom:9291ce7d2a68",
-      "scraped_at_utc": "2026-08-16T17:45:20Z",
+      "scraped_at_utc": "2026-08-16T17:47:37Z",
       "near_miss_token": "ai"
     },
     {
@@ -251,7 +251,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Canada---Remote/Senior-Domain-Architect-Data-Management--French-Preferred-_R12188",
       "job_id": "scrape:workiva:872e7f809444",
-      "scraped_at_utc": "2026-08-16T17:45:14Z",
+      "scraped_at_utc": "2026-08-16T17:47:23Z",
       "near_miss_token": "data"
     },
     {
@@ -261,7 +261,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/USA---Remote/Senior-Domain-Architect--Data-Management_R12187",
       "job_id": "scrape:workiva:e12d2415221d",
-      "scraped_at_utc": "2026-08-16T17:45:14Z",
+      "scraped_at_utc": "2026-08-16T17:47:23Z",
       "near_miss_token": "data"
     },
     {
@@ -271,7 +271,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/USA---Remote/Senior-AI-Product-Manager_R11885",
       "job_id": "scrape:workiva:c68564c048d3",
-      "scraped_at_utc": "2026-08-16T17:45:14Z",
+      "scraped_at_utc": "2026-08-16T17:47:23Z",
       "near_miss_token": "ai"
     },
     {
@@ -281,7 +281,7 @@
       "location_region": "unknown",
       "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Chestnut-Ridge-NY/Sr-Manager--Data-Reporting---Analytics_REQ34364",
       "job_id": "scrape:teledyne-energy-systems:199c40a2ff64",
-      "scraped_at_utc": "2026-08-16T17:45:34Z",
+      "scraped_at_utc": "2026-08-16T17:47:44Z",
       "near_miss_token": "data"
     }
   ]
