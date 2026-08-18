@@ -88,6 +88,16 @@ jobs:
         if: always()
         run: uv run python scripts/summarise_run.py >> "$GITHUB_STEP_SUMMARY"
 
+      # Pull, not push, is what failed on the first real Monday: the output was
+      # sitting there correctly and nobody read it. Runs even on failure, so a
+      # broken scrape is also audible.
+      - name: Notify via WhatsApp
+        if: always()
+        env:
+          CMB_PHONE: ${{ secrets.CMB_PHONE }}
+          CMB_APIKEY: ${{ secrets.CMB_APIKEY }}
+        run: uv run python scripts/notify_whatsapp.py output/latest.json
+
       - name: Upload output as artifact
         if: always()
         uses: actions/upload-artifact@v4
