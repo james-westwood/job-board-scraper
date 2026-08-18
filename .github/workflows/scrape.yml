@@ -2,8 +2,14 @@ name: Weekly job scrape
 
 on:
   schedule:
-    # 06:00 UTC Monday -- 30 min before the weekly Claude session reads the output.
-    - cron: '0 6 * * 1'
+    # 04:00 UTC Monday. The consuming Claude session runs at 07:00, so this
+    # leaves ~3 hours of slack rather than the 30 minutes originally planned.
+    # GitHub queues scheduled workflows on a best-effort basis and delays them
+    # routinely -- the 2026-08-17 run was scheduled for 06:00 and started at
+    # 06:42, leaving only 17 minutes. If drift ever pushes the scrape past
+    # 07:00 the consumer silently reads the previous week's file, so the buffer
+    # needs to absorb an hour-plus delay without anyone noticing.
+    - cron: '0 4 * * 1'
   workflow_dispatch:
     inputs:
       only:

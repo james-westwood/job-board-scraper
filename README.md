@@ -136,8 +136,12 @@ uv run python scripts/validate_output.py            # schema check
 
 ## Schedule
 
-`.github/workflows/scrape.yml` runs `0 6 * * 1` (06:00 UTC Monday), 30 minutes before the
-Claude session that reads it, and commits the result back to `main`. It also accepts a
+`.github/workflows/scrape.yml` runs `0 4 * * 1` (04:00 UTC Monday) and commits the result
+back to `main`. The consuming Claude session runs at 07:00 UTC, so that is ~3 hours of
+slack — deliberately generous, because GitHub delays scheduled runs routinely (the first
+scheduled run was set for 06:00 and started at 06:42). If the scrape ever lands after the
+consumer reads, the consumer sees the previous week's file and reports a false "nothing
+new". It also accepts a
 manual `workflow_dispatch` with optional `only` / `adapter` inputs.
 
 CI runs the unit tests and validates the output schema before committing, so a malformed

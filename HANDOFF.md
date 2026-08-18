@@ -16,9 +16,14 @@ https://raw.githubusercontent.com/james-westwood/job-board-scraper/main/output/l
 Public, no auth, plain GET — readable with `WebFetch`. Dated history lives alongside it at
 `output/runs/YYYY-MM-DD.json`.
 
-The scraper runs **06:00 UTC every Monday**, 30 minutes before the weekly check. Always
-read `run_metadata.run_started_utc` and say how fresh the data is. If that timestamp is
-more than ~8 days old the workflow has stopped running and should be flagged.
+The scraper runs **04:00 UTC every Monday**. Always read `run_metadata.run_started_utc`
+and state how fresh the data is before anything else.
+
+**This matters more than it looks.** GitHub delays scheduled workflows on a best-effort
+basis, so the scrape can land late. If `run_started_utc` is not from today, say so
+explicitly — you are reading the *previous* run, and "no new jobs" would be a false
+negative rather than a quiet week. If it is more than ~8 days old, the workflow has
+stopped running entirely and needs a manual look.
 
 > `raw.githubusercontent.com` caches for a few minutes. If a run just finished and you're
 > seeing stale content, append a cache-buster: `...latest.json?v=<timestamp>`.
