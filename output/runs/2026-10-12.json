@@ -1,0 +1,272 @@
+{
+  "run_metadata": {
+    "run_started_utc": "2026-10-12T11:38:31Z",
+    "run_finished_utc": "2026-10-12T11:39:38Z",
+    "scraper_version": "1.0.0",
+    "companies_attempted": 34,
+    "companies_succeeded": 32,
+    "total_postings_seen": 1620,
+    "total_postings_matched": 8,
+    "total_postings_excluded_non_uk": 18,
+    "total_near_misses": 8,
+    "uk_filter_enabled": true,
+    "companies_failed": [
+      {
+        "name": "ScottishPower",
+        "url": "https://www.scottishpower.jobs/",
+        "error": "TimeoutError: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.scottishpower.jobs/\", waiting until \"commit\"\n"
+      },
+      {
+        "name": "Anglian Water",
+        "url": "https://www.anglianwater.co.uk/careers/",
+        "error": "BlockedError: blocked by anti-bot interstitial; needs a manual check"
+      }
+    ],
+    "companies_no_postings": [
+      {
+        "name": "ev.energy",
+        "url": "https://evenergy.careers.hibob.com/jobs"
+      },
+      {
+        "name": "GRIDSERVE",
+        "url": "https://www.gridserve.com/careers/"
+      },
+      {
+        "name": "Previsico",
+        "url": "https://previsico.com/careers/"
+      },
+      {
+        "name": "Southern Water",
+        "url": "https://www.southernwater.co.uk/careers"
+      },
+      {
+        "name": "BeZero Carbon",
+        "url": "https://bezerocarbon.notion.site/Careers-at-BeZero-Carbon-27ecc087c48c80f68544d42982f24bb8"
+      },
+      {
+        "name": "Treeconomy",
+        "url": "https://www.treeconomy.co/"
+      },
+      {
+        "name": "Piclo",
+        "url": "https://www.piclo.com/careers"
+      },
+      {
+        "name": "Flexitricity",
+        "url": "https://flexitricity.com/about/careers"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "company": "BP Pulse",
+      "title": "Senior data engineer",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-data-engineer_RQ116502-1",
+      "job_id": "scrape:bp-pulse:8254e3191669",
+      "scraped_at_utc": "2026-10-12T11:38:50Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Senior Data Scientist",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "hybrid",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-Machine-Learning-Engineer_RQ113368-1",
+      "job_id": "scrape:bp-pulse:2e152e53c89b",
+      "scraped_at_utc": "2026-10-12T11:38:55Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Expert Data Scientist",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "hybrid",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Staff-Machine-Learing-Engineer_RQ113361-1",
+      "job_id": "scrape:bp-pulse:5374d3260b9f",
+      "scraped_at_utc": "2026-10-12T11:38:55Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Senior data scientist",
+      "location": "United Kingdom - London",
+      "location_region": "uk",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Senior-data-scientist_RQ115892-1",
+      "job_id": "scrape:bp-pulse:9ce5c4662b23",
+      "scraped_at_utc": "2026-10-12T11:38:56Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "Overstory",
+      "title": "Staff Data Engineer",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4976740101",
+      "job_id": "scrape:overstory:90f803700ad8",
+      "scraped_at_utc": "2026-10-12T11:38:56Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Data Engineer (Trade Surveillance)",
+      "location": "Belfast",
+      "location_region": "uk",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/Belfast/Data-Engineer--Trade-Surveillance-_R4992",
+      "job_id": "scrape:icap-energy-as:1ec9693f5428",
+      "scraped_at_utc": "2026-10-12T11:39:00Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "AECOM",
+      "title": "AI Engineering",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": null,
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "unknown",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://aecom.com/careers/ai-engineering/",
+      "job_id": "scrape:aecom:2bfadf11ee61",
+      "scraped_at_utc": "2026-10-12T11:39:23Z",
+      "matched_keyword": "ai engineer"
+    },
+    {
+      "company": "Workiva",
+      "title": "Senior Staff Machine Learning Engineer",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
+      "job_id": "scrape:workiva:971fa729309e",
+      "scraped_at_utc": "2026-10-12T11:39:09Z",
+      "matched_keyword": "machine learning engineer"
+    }
+  ],
+  "near_misses": [
+    {
+      "company": "NESO (National Energy System Operator)",
+      "title": "Lead AI Architect",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/Lead-AI-Architect_JR100426",
+      "job_id": "scrape:neso-national-energy-system-operator:5ebba98d08fd",
+      "scraped_at_utc": "2026-10-12T11:38:33Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "South East Water",
+      "title": "Investment Portfolio Data & Reporting Lead",
+      "location": "Snodland, Kent",
+      "location_region": "uk",
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Investment-Portfolio-Data---Reporting-Lead_JR101265-1",
+      "job_id": "scrape:south-east-water:f8dfbc395922",
+      "scraped_at_utc": "2026-10-12T11:38:47Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "Overstory",
+      "title": "Engineering Manager, Machine Learning",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4488307101",
+      "job_id": "scrape:overstory:ef135c1a537d",
+      "scraped_at_utc": "2026-10-12T11:38:54Z",
+      "near_miss_token": "machine learning"
+    },
+    {
+      "company": "Overstory",
+      "title": "Staff Product Manager, Machine Learning",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4908204101",
+      "job_id": "scrape:overstory:c6342a025239",
+      "scraped_at_utc": "2026-10-12T11:38:54Z",
+      "near_miss_token": "machine learning"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Senior Forward Deployed Engineer (AI)",
+      "location": "London",
+      "location_region": "uk",
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
+      "job_id": "scrape:icap-energy-as:c4b08d3a774d",
+      "scraped_at_utc": "2026-10-12T11:38:59Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "AECOM",
+      "title": "Deputy Design Manager I, Data Centers - Remote (U.S.)",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://aecom.jobs/chicago-il/deputy-design-manager-i-data-centers-remote-us/DCB02CE273944371AAFEF9B5F6E9A07B/job/",
+      "job_id": "scrape:aecom:f6b359670bcc",
+      "scraped_at_utc": "2026-10-12T11:39:20Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "Workiva",
+      "title": "Senior Software Engineer - AI Enablement",
+      "location": "5 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Senior-Software-Engineer---AI-Enablement_R12336-1",
+      "job_id": "scrape:workiva:0cdcb7ba2c2b",
+      "scraped_at_utc": "2026-10-12T11:39:08Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Workiva",
+      "title": "Principal Solutions Consultant - AI",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/London/Principal-Solutions-Consultant---AI_R12432",
+      "job_id": "scrape:workiva:1507361fd1b7",
+      "scraped_at_utc": "2026-10-12T11:39:08Z",
+      "near_miss_token": "ai"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 {
   "run_metadata": {
-    "run_started_utc": "2026-10-05T11:09:57Z",
-    "run_finished_utc": "2026-10-05T11:11:03Z",
+    "run_started_utc": "2026-10-12T11:38:31Z",
+    "run_finished_utc": "2026-10-12T11:39:38Z",
     "scraper_version": "1.0.0",
     "companies_attempted": 34,
     "companies_succeeded": 32,
-    "total_postings_seen": 1655,
+    "total_postings_seen": 1620,
     "total_postings_matched": 8,
-    "total_postings_excluded_non_uk": 11,
-    "total_near_misses": 14,
+    "total_postings_excluded_non_uk": 18,
+    "total_near_misses": 8,
     "uk_filter_enabled": true,
     "companies_failed": [
       {
@@ -60,6 +60,22 @@
   "jobs": [
     {
       "company": "BP Pulse",
+      "title": "Senior data engineer",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-data-engineer_RQ116502-1",
+      "job_id": "scrape:bp-pulse:8254e3191669",
+      "scraped_at_utc": "2026-10-12T11:38:50Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "BP Pulse",
       "title": "Senior Data Scientist",
       "location": "United Kingdom - Sunbury",
       "location_region": "uk",
@@ -71,7 +87,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-Machine-Learning-Engineer_RQ113368-1",
       "job_id": "scrape:bp-pulse:2e152e53c89b",
-      "scraped_at_utc": "2026-10-05T11:10:14Z",
+      "scraped_at_utc": "2026-10-12T11:38:55Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -87,7 +103,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Staff-Machine-Learing-Engineer_RQ113361-1",
       "job_id": "scrape:bp-pulse:5374d3260b9f",
-      "scraped_at_utc": "2026-10-05T11:10:14Z",
+      "scraped_at_utc": "2026-10-12T11:38:55Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -103,7 +119,7 @@
       "salary_max_gbp": null,
       "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Senior-data-scientist_RQ115892-1",
       "job_id": "scrape:bp-pulse:9ce5c4662b23",
-      "scraped_at_utc": "2026-10-05T11:10:15Z",
+      "scraped_at_utc": "2026-10-12T11:38:56Z",
       "matched_keyword": "data scientist"
     },
     {
@@ -119,7 +135,7 @@
       "salary_max_gbp": null,
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4976740101",
       "job_id": "scrape:overstory:90f803700ad8",
-      "scraped_at_utc": "2026-10-05T11:10:23Z",
+      "scraped_at_utc": "2026-10-12T11:38:56Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -135,7 +151,7 @@
       "salary_max_gbp": null,
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/Belfast/Data-Engineer--Trade-Surveillance-_R4992",
       "job_id": "scrape:icap-energy-as:1ec9693f5428",
-      "scraped_at_utc": "2026-10-05T11:10:25Z",
+      "scraped_at_utc": "2026-10-12T11:39:00Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -151,7 +167,7 @@
       "salary_max_gbp": null,
       "url": "https://aecom.com/careers/ai-engineering/",
       "job_id": "scrape:aecom:2bfadf11ee61",
-      "scraped_at_utc": "2026-10-05T11:10:47Z",
+      "scraped_at_utc": "2026-10-12T11:39:23Z",
       "matched_keyword": "ai engineer"
     },
     {
@@ -167,37 +183,11 @@
       "salary_max_gbp": null,
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
       "job_id": "scrape:workiva:971fa729309e",
-      "scraped_at_utc": "2026-10-05T11:10:32Z",
+      "scraped_at_utc": "2026-10-12T11:39:09Z",
       "matched_keyword": "machine learning engineer"
-    },
-    {
-      "company": "Habitat Energy",
-      "title": "Data Scientist",
-      "location": "Location: England, Oxford",
-      "location_region": "uk",
-      "work_arrangement": "hybrid",
-      "work_arrangement_detail": null,
-      "work_arrangement_confidence": "stated",
-      "salary_raw": null,
-      "salary_min_gbp": null,
-      "salary_max_gbp": null,
-      "url": "https://apply.workable.com/j/BEC8B5140E",
-      "job_id": "scrape:habitat-energy:ce005f9ba0b9",
-      "scraped_at_utc": "2026-10-05T11:10:44Z",
-      "matched_keyword": "data scientist"
     }
   ],
   "near_misses": [
-    {
-      "company": "OVO Energy",
-      "title": "Growth Analytics Manager (12 Months Fixed Term Contract)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://careers.ovo.com/growth-analytics-manager-12-months-fixed-term-contract/8236670",
-      "job_id": "scrape:ovo-energy:045c8418b548",
-      "scraped_at_utc": "2026-10-05T11:10:02Z",
-      "near_miss_token": "analytics"
-    },
     {
       "company": "NESO (National Energy System Operator)",
       "title": "Lead AI Architect",
@@ -205,17 +195,17 @@
       "location_region": "unknown",
       "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/Lead-AI-Architect_JR100426",
       "job_id": "scrape:neso-national-energy-system-operator:5ebba98d08fd",
-      "scraped_at_utc": "2026-10-05T11:09:59Z",
+      "scraped_at_utc": "2026-10-12T11:38:33Z",
       "near_miss_token": "ai"
     },
     {
       "company": "South East Water",
-      "title": "Smart Meter Reporting and Data Analyst",
+      "title": "Investment Portfolio Data & Reporting Lead",
       "location": "Snodland, Kent",
       "location_region": "uk",
-      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Smart-Meter-Reporting-and-Data-Analyst_JR101443-1",
-      "job_id": "scrape:south-east-water:a0304e438231",
-      "scraped_at_utc": "2026-10-05T11:10:12Z",
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Investment-Portfolio-Data---Reporting-Lead_JR101265-1",
+      "job_id": "scrape:south-east-water:f8dfbc395922",
+      "scraped_at_utc": "2026-10-12T11:38:47Z",
       "near_miss_token": "data"
     },
     {
@@ -225,7 +215,7 @@
       "location_region": "unknown",
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4488307101",
       "job_id": "scrape:overstory:ef135c1a537d",
-      "scraped_at_utc": "2026-10-05T11:10:20Z",
+      "scraped_at_utc": "2026-10-12T11:38:54Z",
       "near_miss_token": "machine learning"
     },
     {
@@ -235,7 +225,7 @@
       "location_region": "unknown",
       "url": "https://job-boards.eu.greenhouse.io/overstory/jobs/4908204101",
       "job_id": "scrape:overstory:c6342a025239",
-      "scraped_at_utc": "2026-10-05T11:10:20Z",
+      "scraped_at_utc": "2026-10-12T11:38:54Z",
       "near_miss_token": "machine learning"
     },
     {
@@ -245,57 +235,17 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
       "job_id": "scrape:icap-energy-as:c4b08d3a774d",
-      "scraped_at_utc": "2026-10-05T11:10:24Z",
+      "scraped_at_utc": "2026-10-12T11:38:59Z",
       "near_miss_token": "ai"
     },
     {
       "company": "AECOM",
-      "title": "Principal Environmental Scientist – Contaminated Land",
+      "title": "Deputy Design Manager I, Data Centers - Remote (U.S.)",
       "location": null,
       "location_region": "unknown",
-      "url": "https://aecom.jobs/darwin-aus/principal-environmental-scientist-contaminated-land/F69F076B9B6B459787939FFFB83B28AB/job/",
-      "job_id": "scrape:aecom:a4e86bba3694",
-      "scraped_at_utc": "2026-10-05T11:10:43Z",
-      "near_miss_token": "scientist"
-    },
-    {
-      "company": "AECOM",
-      "title": "Design Project Manager, Data Centers - Remote (U.S.)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/arlington-va/design-project-manager-data-centers-remote-us/B6C8D7CEA3884C28BDB35C45891561E5/job/",
-      "job_id": "scrape:aecom:d103ec19f346",
-      "scraped_at_utc": "2026-10-05T11:10:43Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Data Center Quality Assurance Managers",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/salt-lake-city-ut/data-center-quality-assurance-managers/B316F32A3F0447E39B7516DC8BB21FCA/job/",
-      "job_id": "scrape:aecom:4f1fff5bec8e",
-      "scraped_at_utc": "2026-10-05T11:10:43Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Data Center Quality Assurance Managers",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/dallas-tx/data-center-quality-assurance-managers/D97859477BD946AD9B4DCEFA628B1407/job/",
-      "job_id": "scrape:aecom:e9502279a134",
-      "scraped_at_utc": "2026-10-05T11:10:43Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Principal Engineer - Telecommunications (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/principal-engineer-telecommunications-data-centers/9DE1FBDADEA24B3EB7998DCDE9BEDFF9/job/",
-      "job_id": "scrape:aecom:5f3342233e6f",
-      "scraped_at_utc": "2026-10-05T11:10:43Z",
+      "url": "https://aecom.jobs/chicago-il/deputy-design-manager-i-data-centers-remote-us/DCB02CE273944371AAFEF9B5F6E9A07B/job/",
+      "job_id": "scrape:aecom:f6b359670bcc",
+      "scraped_at_utc": "2026-10-12T11:39:20Z",
       "near_miss_token": "data"
     },
     {
@@ -305,7 +255,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Senior-Software-Engineer---AI-Enablement_R12336-1",
       "job_id": "scrape:workiva:0cdcb7ba2c2b",
-      "scraped_at_utc": "2026-10-05T11:10:31Z",
+      "scraped_at_utc": "2026-10-12T11:39:08Z",
       "near_miss_token": "ai"
     },
     {
@@ -315,18 +265,8 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/London/Principal-Solutions-Consultant---AI_R12432",
       "job_id": "scrape:workiva:1507361fd1b7",
-      "scraped_at_utc": "2026-10-05T11:10:31Z",
+      "scraped_at_utc": "2026-10-12T11:39:08Z",
       "near_miss_token": "ai"
-    },
-    {
-      "company": "Teledyne Energy Systems",
-      "title": "Sr. Manager, Data Reporting & Analytics",
-      "location": "2 Locations",
-      "location_region": "unknown",
-      "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Chestnut-Ridge-NY/Sr-Manager--Data-Reporting---Analytics_REQ34364",
-      "job_id": "scrape:teledyne-energy-systems:199c40a2ff64",
-      "scraped_at_utc": "2026-10-05T11:10:52Z",
-      "near_miss_token": "data"
     }
   ]
 }
