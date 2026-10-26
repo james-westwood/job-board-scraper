@@ -1,0 +1,264 @@
+{
+  "run_metadata": {
+    "run_started_utc": "2026-10-26T09:40:05Z",
+    "run_finished_utc": "2026-10-26T09:41:10Z",
+    "scraper_version": "1.0.0",
+    "companies_attempted": 34,
+    "companies_succeeded": 32,
+    "total_postings_seen": 1564,
+    "total_postings_matched": 4,
+    "total_postings_excluded_non_uk": 13,
+    "total_near_misses": 14,
+    "uk_filter_enabled": true,
+    "companies_failed": [
+      {
+        "name": "ScottishPower",
+        "url": "https://www.scottishpower.jobs/",
+        "error": "TimeoutError: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.scottishpower.jobs/\", waiting until \"commit\"\n"
+      },
+      {
+        "name": "Anglian Water",
+        "url": "https://www.anglianwater.co.uk/careers/",
+        "error": "BlockedError: blocked by anti-bot interstitial; needs a manual check"
+      }
+    ],
+    "companies_no_postings": [
+      {
+        "name": "ev.energy",
+        "url": "https://evenergy.careers.hibob.com/jobs"
+      },
+      {
+        "name": "GRIDSERVE",
+        "url": "https://www.gridserve.com/careers/"
+      },
+      {
+        "name": "Previsico",
+        "url": "https://previsico.com/careers/"
+      },
+      {
+        "name": "Southern Water",
+        "url": "https://www.southernwater.co.uk/careers"
+      },
+      {
+        "name": "BeZero Carbon",
+        "url": "https://bezerocarbon.notion.site/Careers-at-BeZero-Carbon-27ecc087c48c80f68544d42982f24bb8"
+      },
+      {
+        "name": "Treeconomy",
+        "url": "https://www.treeconomy.co/"
+      },
+      {
+        "name": "Piclo",
+        "url": "https://www.piclo.com/careers"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "company": "NESO (National Energy System Operator)",
+      "title": "Data Scientist",
+      "location": "Glasgow - West George Street",
+      "location_region": "uk",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": "£63,000 - £81,000",
+      "salary_min_gbp": 63000,
+      "salary_max_gbp": 81000,
+      "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Glasgow---West-George-Street/Data-Scientist_JR101100",
+      "job_id": "scrape:neso-national-energy-system-operator:05d41498c4ea",
+      "scraped_at_utc": "2026-10-26T09:40:09Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "Overstory",
+      "title": "Staff Data Engineer",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://jobs.ashbyhq.com/overstory/968e336f-de7d-4262-8f77-34ce3d9f15b5",
+      "job_id": "scrape:overstory:a3d8d49cf38a",
+      "scraped_at_utc": "2026-10-26T09:40:35Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "AECOM",
+      "title": "AI Engineering",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": null,
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "unknown",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://aecom.com/careers/ai-engineering/",
+      "job_id": "scrape:aecom:2bfadf11ee61",
+      "scraped_at_utc": "2026-10-26T09:40:53Z",
+      "matched_keyword": "ai engineer"
+    },
+    {
+      "company": "Workiva",
+      "title": "Senior Staff Machine Learning Engineer",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Sault-Ste-Marie/Senior-Staff-Machine-Learning-Engineer_R11946",
+      "job_id": "scrape:workiva:971fa729309e",
+      "scraped_at_utc": "2026-10-26T09:40:38Z",
+      "matched_keyword": "machine learning engineer"
+    }
+  ],
+  "near_misses": [
+    {
+      "company": "NESO (National Energy System Operator)",
+      "title": "Lead AI Architect",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/Lead-AI-Architect_JR100426",
+      "job_id": "scrape:neso-national-energy-system-operator:5ebba98d08fd",
+      "scraped_at_utc": "2026-10-26T09:40:08Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Product Manager – Golden Phoenix Data & AI",
+      "location": "United Kingdom - London",
+      "location_region": "uk",
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Product-Manager---Golden-Phoenix-Data---AI_RQ117083-1",
+      "job_id": "scrape:bp-pulse:70a86a677cb6",
+      "scraped_at_utc": "2026-10-26T09:40:23Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Senior Compliance Manager, Analytics & Innovation | AI Governance & Trade Surveillance",
+      "location": "United Kingdom - London",
+      "location_region": "uk",
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Senior-Compliance-Manager--Analytics---Innovation---AI-Governance---Trade-Surveillance_RQ117228-2",
+      "job_id": "scrape:bp-pulse:7bafacb3b174",
+      "scraped_at_utc": "2026-10-26T09:40:23Z",
+      "near_miss_token": "analytics"
+    },
+    {
+      "company": "Overstory",
+      "title": "Engineering Manager, Machine Learning",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://jobs.ashbyhq.com/overstory/21833480-616c-4649-a5ea-220be364e159",
+      "job_id": "scrape:overstory:54d85bc494b6",
+      "scraped_at_utc": "2026-10-26T09:40:28Z",
+      "near_miss_token": "machine learning"
+    },
+    {
+      "company": "Overstory",
+      "title": "Staff Product Manager, Machine Learning",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://jobs.ashbyhq.com/overstory/11d1c613-10f4-44a8-8973-44f2f1f710b0",
+      "job_id": "scrape:overstory:1f967b36da3e",
+      "scraped_at_utc": "2026-10-26T09:40:28Z",
+      "near_miss_token": "machine learning"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Associate Quantitative Engineer",
+      "location": "London",
+      "location_region": "uk",
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Associate-Quantitative-Engineer_R5968",
+      "job_id": "scrape:icap-energy-as:2e5465a20821",
+      "scraped_at_utc": "2026-10-26T09:40:33Z",
+      "near_miss_token": "quantitative"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Senior Forward Deployed Engineer (AI)",
+      "location": "London",
+      "location_region": "uk",
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
+      "job_id": "scrape:icap-energy-as:c4b08d3a774d",
+      "scraped_at_utc": "2026-10-26T09:40:33Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "AECOM",
+      "title": "Digital Data Analyst",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://aecom.jobs/birmingham-gbr/digital-data-analyst/42B10F8453114CCBA0D1A418ADA1FDBD/job/",
+      "job_id": "scrape:aecom:85d222eddec7",
+      "scraped_at_utc": "2026-10-26T09:40:50Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "AECOM",
+      "title": "Senior Data Center Construction Manager",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://aecom.jobs/indianapolis-in/senior-data-center-construction-manager/A890C224C6584CD08B69DADE65AFABFB/job/",
+      "job_id": "scrape:aecom:d997c3e10326",
+      "scraped_at_utc": "2026-10-26T09:40:50Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "AECOM",
+      "title": "Senior Data Center Construction Manager",
+      "location": null,
+      "location_region": "unknown",
+      "url": "https://aecom.jobs/salt-lake-city-ut/senior-data-center-construction-manager/F664C0CEB8FE41F8B77F5D6316662FF0/job/",
+      "job_id": "scrape:aecom:ce78914efeb7",
+      "scraped_at_utc": "2026-10-26T09:40:50Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "Centrica Energy",
+      "title": "Quant Trader for Short-Term Power Trading",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Aalborg/Quant-Trader-for-Short-Term-Power-Trading_R0090842",
+      "job_id": "scrape:centrica-energy:91a117db098f",
+      "scraped_at_utc": "2026-10-26T09:40:36Z",
+      "near_miss_token": "quant"
+    },
+    {
+      "company": "Workiva",
+      "title": "Senior Software Engineer - AI Enablement",
+      "location": "5 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Senior-Software-Engineer---AI-Enablement_R12336-1",
+      "job_id": "scrape:workiva:0cdcb7ba2c2b",
+      "scraped_at_utc": "2026-10-26T09:40:37Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Workiva",
+      "title": "Principal Solutions Consultant - AI",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/London/Principal-Solutions-Consultant---AI_R12432",
+      "job_id": "scrape:workiva:1507361fd1b7",
+      "scraped_at_utc": "2026-10-26T09:40:37Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Teledyne Energy Systems",
+      "title": "Business Graduate – Finance & Business Analytics",
+      "location": "UK - Lincoln",
+      "location_region": "uk",
+      "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/UK---Lincoln/Business-Graduate---Finance---Business-Analytics_REQ37176",
+      "job_id": "scrape:teledyne-energy-systems:b23e1f39e7cd",
+      "scraped_at_utc": "2026-10-26T09:40:58Z",
+      "near_miss_token": "analytics"
+    }
+  ]
+}
