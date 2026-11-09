@@ -1,14 +1,14 @@
 {
   "run_metadata": {
-    "run_started_utc": "2026-11-02T11:59:14Z",
-    "run_finished_utc": "2026-11-02T12:00:21Z",
+    "run_started_utc": "2026-11-09T12:29:42Z",
+    "run_finished_utc": "2026-11-09T12:30:44Z",
     "scraper_version": "1.0.0",
     "companies_attempted": 34,
     "companies_succeeded": 32,
-    "total_postings_seen": 1460,
-    "total_postings_matched": 2,
+    "total_postings_seen": 1488,
+    "total_postings_matched": 5,
     "total_postings_excluded_non_uk": 10,
-    "total_near_misses": 26,
+    "total_near_misses": 13,
     "uk_filter_enabled": true,
     "companies_failed": [
       {
@@ -59,9 +59,9 @@
   },
   "jobs": [
     {
-      "company": "Overstory",
-      "title": "Staff Data Engineer",
-      "location": null,
+      "company": "BP Pulse",
+      "title": "Data Scientist",
+      "location": "Oman - Muscat",
       "location_region": "unknown",
       "work_arrangement": "remote",
       "work_arrangement_detail": null,
@@ -69,9 +69,41 @@
       "salary_raw": null,
       "salary_min_gbp": null,
       "salary_max_gbp": null,
-      "url": "https://jobs.ashbyhq.com/overstory/968e336f-de7d-4262-8f77-34ce3d9f15b5",
-      "job_id": "scrape:overstory:a3d8d49cf38a",
-      "scraped_at_utc": "2026-11-02T11:59:48Z",
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Oman---Muscat/Data-Scientist_RQ116445-1",
+      "job_id": "scrape:bp-pulse:a3f14c96d544",
+      "scraped_at_utc": "2026-11-09T12:29:53Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Senior data engineer",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-data-engineer_RQ116502-1",
+      "job_id": "scrape:bp-pulse:8254e3191669",
+      "scraped_at_utc": "2026-11-09T12:29:55Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Market Data Engineer, Parameta Solutions",
+      "location": "London",
+      "location_region": "uk",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Market-Data-Engineer--Parameta-Solutions_R6008",
+      "job_id": "scrape:icap-energy-as:a89bf6b7f584",
+      "scraped_at_utc": "2026-11-09T12:30:06Z",
       "matched_keyword": "data engineer"
     },
     {
@@ -87,8 +119,24 @@
       "salary_max_gbp": null,
       "url": "https://aecom.com/careers/ai-engineering/",
       "job_id": "scrape:aecom:2bfadf11ee61",
-      "scraped_at_utc": "2026-11-02T12:00:04Z",
+      "scraped_at_utc": "2026-11-09T12:30:28Z",
       "matched_keyword": "ai engineer"
+    },
+    {
+      "company": "Teledyne Energy Systems",
+      "title": "Senior Analytics Engineer (ERP, Manufacturing & Power BI)",
+      "location": "6 Locations",
+      "location_region": "unknown",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": "$120,300",
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Rancho-Cordova-CA-TDY/Senior-Analytics-Engineer--ERP--Manufacturing---Power-BI-_REQ35431-1",
+      "job_id": "scrape:teledyne-energy-systems:abb1cf7d11bf",
+      "scraped_at_utc": "2026-11-09T12:30:44Z",
+      "matched_keyword": "analytics engineer"
     }
   ],
   "near_misses": [
@@ -99,38 +147,18 @@
       "location_region": "unknown",
       "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick-CV34-6DA/EMR-Data-Analyst_JR101104",
       "job_id": "scrape:neso-national-energy-system-operator:bbe617c1b088",
-      "scraped_at_utc": "2026-11-02T11:59:16Z",
+      "scraped_at_utc": "2026-11-09T12:29:44Z",
       "near_miss_token": "data"
     },
     {
-      "company": "BP Pulse",
-      "title": "Senior Compliance Manager, Analytics & Innovation | AI Governance & Trade Surveillance",
-      "location": "United Kingdom - London",
-      "location_region": "uk",
-      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Senior-Compliance-Manager--Analytics---Innovation---AI-Governance---Trade-Surveillance_RQ117228-2",
-      "job_id": "scrape:bp-pulse:7bafacb3b174",
-      "scraped_at_utc": "2026-11-02T11:59:26Z",
-      "near_miss_token": "analytics"
-    },
-    {
-      "company": "Overstory",
-      "title": "Engineering Manager, Machine Learning",
-      "location": null,
+      "company": "South East Water",
+      "title": "Leakage Data Analyst",
+      "location": "4 Locations",
       "location_region": "unknown",
-      "url": "https://jobs.ashbyhq.com/overstory/21833480-616c-4649-a5ea-220be364e159",
-      "job_id": "scrape:overstory:54d85bc494b6",
-      "scraped_at_utc": "2026-11-02T11:59:39Z",
-      "near_miss_token": "machine learning"
-    },
-    {
-      "company": "Overstory",
-      "title": "Staff Product Manager, Machine Learning",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://jobs.ashbyhq.com/overstory/11d1c613-10f4-44a8-8973-44f2f1f710b0",
-      "job_id": "scrape:overstory:1f967b36da3e",
-      "scraped_at_utc": "2026-11-02T11:59:39Z",
-      "near_miss_token": "machine learning"
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Leakage-Data-Analyst_JR101519",
+      "job_id": "scrape:south-east-water:00edcc0a4d02",
+      "scraped_at_utc": "2026-11-09T12:29:56Z",
+      "near_miss_token": "data"
     },
     {
       "company": "ICAP Energy AS",
@@ -139,7 +167,7 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Associate-Quantitative-Engineer_R5968",
       "job_id": "scrape:icap-energy-as:2e5465a20821",
-      "scraped_at_utc": "2026-11-02T11:59:39Z",
+      "scraped_at_utc": "2026-11-09T12:30:06Z",
       "near_miss_token": "quantitative"
     },
     {
@@ -149,148 +177,48 @@
       "location_region": "uk",
       "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
       "job_id": "scrape:icap-energy-as:c4b08d3a774d",
-      "scraped_at_utc": "2026-11-02T11:59:39Z",
+      "scraped_at_utc": "2026-11-09T12:30:06Z",
       "near_miss_token": "ai"
     },
     {
       "company": "AECOM",
-      "title": "Associate Director - Architecture (Data Centers)",
+      "title": "Senior Design Manager (Data Center)",
       "location": null,
       "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-architecture-data-centers/395DCA2E592E4E3E9763C14B09225D91/job/",
-      "job_id": "scrape:aecom:3ca3eb69b435",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
+      "url": "https://aecom.jobs/bengaluru-ind/senior-design-manager-data-center/F14D5034D4AA45CF85C9765F77103CB2/job/",
+      "job_id": "scrape:aecom:960a47a84b89",
+      "scraped_at_utc": "2026-11-09T12:30:25Z",
       "near_miss_token": "data"
     },
     {
       "company": "AECOM",
-      "title": "Associate Director - Fire Engineering (Data Centers)",
+      "title": "Project Controls Analytics Consultant - Defence sector",
       "location": null,
       "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-fire-engineering-data-centers/39356EC19536431F91400F883380E2E3/job/",
-      "job_id": "scrape:aecom:3a73a5a92e08",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
+      "url": "https://aecom.jobs/manchester-gbr/project-controls-analytics-consultant-defence-sector/8E29CF41A27D4A719D7720738897FA49/job/",
+      "job_id": "scrape:aecom:3cf6fdd43064",
+      "scraped_at_utc": "2026-11-09T12:30:25Z",
+      "near_miss_token": "analytics"
     },
     {
       "company": "AECOM",
-      "title": "Associate Director - Structural Engineering (Data Centers)",
+      "title": "Project Controls Analytics Consultant - Defence sector",
       "location": null,
       "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-structural-engineering-data-centers/29E28917D18847869C2995A9AF4E5E9C/job/",
-      "job_id": "scrape:aecom:58b1fd2d8a67",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
+      "url": "https://aecom.jobs/birmingham-gbr/project-controls-analytics-consultant-defence-sector/F7BDD6CEB25448808546015BC25D76F1/job/",
+      "job_id": "scrape:aecom:66c40d36274c",
+      "scraped_at_utc": "2026-11-09T12:30:25Z",
+      "near_miss_token": "analytics"
     },
     {
-      "company": "AECOM",
-      "title": "Associate Director – Plumbing Engineering (Data Centers)",
-      "location": null,
+      "company": "Centrica Energy",
+      "title": "Business Intelligence & Reporting Analyst",
+      "location": "2 Locations",
       "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-plumbing-engineering-data-centers/909C8409F77B48B4BAF6DAE9FEAD62EA/job/",
-      "job_id": "scrape:aecom:697a07b85611",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Fire Detection Evacuation & Alarm Systems (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-fire-detection-evacuation-alarm-systems-data-centers/CB21E16EF0D7435B98D5B27D87A53813/job/",
-      "job_id": "scrape:aecom:2d95bdd8919c",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Architecture (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-architecture-data-centers/B30C1A7631374FCFBCCC4685FEC9EEC1/job/",
-      "job_id": "scrape:aecom:867e2bcb9a83",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director – Plumbing Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-plumbing-engineering-data-centers/1F7BBF22A5444C1ABE7034669CDD19C7/job/",
-      "job_id": "scrape:aecom:de04229ffe38",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Structural Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-structural-engineering-data-centers/EB5DEA4E208042CEA4A38182F2667E70/job/",
-      "job_id": "scrape:aecom:ea9131acbaac",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Electrical Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/associate-director-electrical-engineering-data-centers/7CF5848120004569888994847B293CC5/job/",
-      "job_id": "scrape:aecom:0d48da864fb1",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Principal Engineer - Electrical Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/principal-engineer-electrical-engineering-data-centers/30942F46AF664472A1E4081C09D88646/job/",
-      "job_id": "scrape:aecom:f744de4f583d",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Principal Engineer - Electrical Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/medellin-col/principal-engineer-electrical-engineering-data-centers/D5D3D8E6E84F45FFB2E476790B972502/job/",
-      "job_id": "scrape:aecom:6e2dba0f3890",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Fire Detection Evacuation & Alarm Systems (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-fire-detection-evacuation-alarm-systems-data-centers/9BD6B17A5E974C409F577338851DC5A6/job/",
-      "job_id": "scrape:aecom:515c07972c03",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Fire Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-fire-engineering-data-centers/0C3ABA0F0E75425E9E1039FD2C0692A1/job/",
-      "job_id": "scrape:aecom:f2b049c6b51f",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
-    },
-    {
-      "company": "AECOM",
-      "title": "Associate Director - Electrical Engineering (Data Centers)",
-      "location": null,
-      "location_region": "unknown",
-      "url": "https://aecom.jobs/bogota-col/associate-director-electrical-engineering-data-centers/52BED58A5B254E93A9D50B9430B21AB0/job/",
-      "job_id": "scrape:aecom:2051e13cef73",
-      "scraped_at_utc": "2026-11-02T12:00:00Z",
-      "near_miss_token": "data"
+      "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Leicester/Business-Intelligence---Reporting-Analyst-_R0090515-1",
+      "job_id": "scrape:centrica-energy:c8c4821e6bbf",
+      "scraped_at_utc": "2026-11-09T12:30:12Z",
+      "near_miss_token": "business intelligence"
     },
     {
       "company": "Centrica Energy",
@@ -299,18 +227,8 @@
       "location_region": "unknown",
       "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Windsor/Research---Innovation-Manager--Automation-_R0085591-1",
       "job_id": "scrape:centrica-energy:cb3aac2968ca",
-      "scraped_at_utc": "2026-11-02T11:59:47Z",
+      "scraped_at_utc": "2026-11-09T12:30:12Z",
       "near_miss_token": "ai"
-    },
-    {
-      "company": "Centrica Energy",
-      "title": "Quant Trader for Short-Term Power Trading",
-      "location": "2 Locations",
-      "location_region": "unknown",
-      "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Aalborg/Quant-Trader-for-Short-Term-Power-Trading_R0090842",
-      "job_id": "scrape:centrica-energy:91a117db098f",
-      "scraped_at_utc": "2026-11-02T11:59:47Z",
-      "near_miss_token": "quant"
     },
     {
       "company": "Workiva",
@@ -319,7 +237,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Senior-Software-Engineer---AI-Enablement_R12336-1",
       "job_id": "scrape:workiva:0cdcb7ba2c2b",
-      "scraped_at_utc": "2026-11-02T11:59:49Z",
+      "scraped_at_utc": "2026-11-09T12:30:13Z",
       "near_miss_token": "ai"
     },
     {
@@ -329,7 +247,7 @@
       "location_region": "unknown",
       "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/London/Principal-Solutions-Consultant---AI_R12432",
       "job_id": "scrape:workiva:1507361fd1b7",
-      "scraped_at_utc": "2026-11-02T11:59:49Z",
+      "scraped_at_utc": "2026-11-09T12:30:13Z",
       "near_miss_token": "ai"
     },
     {
@@ -339,7 +257,7 @@
       "location_region": "unknown",
       "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Daytona-Beach-FL-TDY/Sr-Manager--Data-Reporting---Analytics_REQ34364",
       "job_id": "scrape:teledyne-energy-systems:f3999fac7a0b",
-      "scraped_at_utc": "2026-11-02T12:00:14Z",
+      "scraped_at_utc": "2026-11-09T12:30:44Z",
       "near_miss_token": "analytics"
     },
     {
@@ -349,7 +267,7 @@
       "location_region": "uk",
       "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/UK---Lincoln/Business-Graduate---Finance---Business-Analytics_REQ37176",
       "job_id": "scrape:teledyne-energy-systems:b23e1f39e7cd",
-      "scraped_at_utc": "2026-11-02T12:00:14Z",
+      "scraped_at_utc": "2026-11-09T12:30:44Z",
       "near_miss_token": "analytics"
     }
   ]
