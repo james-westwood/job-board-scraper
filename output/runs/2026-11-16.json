@@ -1,0 +1,276 @@
+{
+  "run_metadata": {
+    "run_started_utc": "2026-11-16T12:24:48Z",
+    "run_finished_utc": "2026-11-16T12:25:51Z",
+    "scraper_version": "1.0.0",
+    "companies_attempted": 34,
+    "companies_succeeded": 32,
+    "total_postings_seen": 1415,
+    "total_postings_matched": 7,
+    "total_postings_excluded_non_uk": 7,
+    "total_near_misses": 10,
+    "uk_filter_enabled": true,
+    "companies_failed": [
+      {
+        "name": "ScottishPower",
+        "url": "https://www.scottishpower.jobs/",
+        "error": "TimeoutError: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.scottishpower.jobs/\", waiting until \"commit\"\n"
+      },
+      {
+        "name": "Anglian Water",
+        "url": "https://www.anglianwater.co.uk/careers/",
+        "error": "BlockedError: blocked by anti-bot interstitial; needs a manual check"
+      }
+    ],
+    "companies_no_postings": [
+      {
+        "name": "ev.energy",
+        "url": "https://evenergy.careers.hibob.com/jobs"
+      },
+      {
+        "name": "GRIDSERVE",
+        "url": "https://www.gridserve.com/careers/"
+      },
+      {
+        "name": "Previsico",
+        "url": "https://previsico.com/careers/"
+      },
+      {
+        "name": "Southern Water",
+        "url": "https://www.southernwater.co.uk/careers"
+      },
+      {
+        "name": "BeZero Carbon",
+        "url": "https://bezerocarbon.notion.site/Careers-at-BeZero-Carbon-27ecc087c48c80f68544d42982f24bb8"
+      },
+      {
+        "name": "Treeconomy",
+        "url": "https://www.treeconomy.co/"
+      },
+      {
+        "name": "Piclo",
+        "url": "https://www.piclo.com/careers"
+      },
+      {
+        "name": "Flexitricity",
+        "url": "https://flexitricity.com/about/careers"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "company": "NESO (National Energy System Operator)",
+      "title": "Data Scientist",
+      "location": "3 Locations",
+      "location_region": "unknown",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": "£63,000 - £81,000",
+      "salary_min_gbp": 63000,
+      "salary_max_gbp": 81000,
+      "url": "https://neso.wd103.myworkdayjobs.com/Careers/job/Warwick---Faraday-House/Data-Scientist_JR101100",
+      "job_id": "scrape:neso-national-energy-system-operator:34f50f7cb202",
+      "scraped_at_utc": "2026-11-16T12:24:49Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "Ecotricity",
+      "title": "Data Engineer",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": "hybrid",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": "£40,000 to £60,000",
+      "salary_min_gbp": 40000,
+      "salary_max_gbp": 60000,
+      "url": "https://jobs.ecotricity.co.uk/vacancies/2873/data-engineer.html",
+      "job_id": "scrape:ecotricity:95499ac0a3ec",
+      "scraped_at_utc": "2026-11-16T12:24:57Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Data Scientist",
+      "location": "Oman - Muscat",
+      "location_region": "unknown",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/Oman---Muscat/Data-Scientist_RQ116445-1",
+      "job_id": "scrape:bp-pulse:a3f14c96d544",
+      "scraped_at_utc": "2026-11-16T12:25:01Z",
+      "matched_keyword": "data scientist"
+    },
+    {
+      "company": "BP Pulse",
+      "title": "Senior data engineer",
+      "location": "United Kingdom - Sunbury",
+      "location_region": "uk",
+      "work_arrangement": "remote",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "stated",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---Sunbury/Senior-data-engineer_RQ116502-1",
+      "job_id": "scrape:bp-pulse:8254e3191669",
+      "scraped_at_utc": "2026-11-16T12:25:03Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Market Data Engineer, Parameta Solutions",
+      "location": "London",
+      "location_region": "uk",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Market-Data-Engineer--Parameta-Solutions_R6008",
+      "job_id": "scrape:icap-energy-as:a89bf6b7f584",
+      "scraped_at_utc": "2026-11-16T12:25:12Z",
+      "matched_keyword": "data engineer"
+    },
+    {
+      "company": "AECOM",
+      "title": "AI Engineering",
+      "location": null,
+      "location_region": "unknown",
+      "work_arrangement": null,
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "unknown",
+      "salary_raw": null,
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://aecom.com/careers/ai-engineering/",
+      "job_id": "scrape:aecom:2bfadf11ee61",
+      "scraped_at_utc": "2026-11-16T12:25:28Z",
+      "matched_keyword": "ai engineer"
+    },
+    {
+      "company": "Teledyne Energy Systems",
+      "title": "Senior Analytics Engineer (ERP, Manufacturing & Power BI)",
+      "location": "6 Locations",
+      "location_region": "unknown",
+      "work_arrangement": "onsite",
+      "work_arrangement_detail": null,
+      "work_arrangement_confidence": "inferred",
+      "salary_raw": "$120,300",
+      "salary_min_gbp": null,
+      "salary_max_gbp": null,
+      "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Rancho-Cordova-CA-TDY/Senior-Analytics-Engineer--ERP--Manufacturing---Power-BI-_REQ35431-1",
+      "job_id": "scrape:teledyne-energy-systems:abb1cf7d11bf",
+      "scraped_at_utc": "2026-11-16T12:25:41Z",
+      "matched_keyword": "analytics engineer"
+    }
+  ],
+  "near_misses": [
+    {
+      "company": "BP Pulse",
+      "title": "Forward Deployed Engineer - AI & Trading",
+      "location": "3 Locations",
+      "location_region": "unknown",
+      "url": "https://bpinternational.wd3.myworkdayjobs.com/bpCareers/job/United-Kingdom---London/Forward-Deployed-Engineer---AI---Trading_RQ117964-1",
+      "job_id": "scrape:bp-pulse:594a5bf9624d",
+      "scraped_at_utc": "2026-11-16T12:25:00Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "South East Water",
+      "title": "Process Scientist",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Farnborough-Hampshire/Process-Scientist_JR101518-1",
+      "job_id": "scrape:south-east-water:97fad513bbad",
+      "scraped_at_utc": "2026-11-16T12:25:02Z",
+      "near_miss_token": "scientist"
+    },
+    {
+      "company": "South East Water",
+      "title": "Process Scientist",
+      "location": "Pembury, Kent",
+      "location_region": "uk",
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Pembury-Kent/Process-Scientist_JR101334",
+      "job_id": "scrape:south-east-water:3ecb5248fa43",
+      "scraped_at_utc": "2026-11-16T12:25:02Z",
+      "near_miss_token": "scientist"
+    },
+    {
+      "company": "South East Water",
+      "title": "Leakage Data Analyst",
+      "location": "4 Locations",
+      "location_region": "unknown",
+      "url": "https://southeastwater.wd103.myworkdayjobs.com/South_East_Water_Careers_site/job/Snodland-Kent/Leakage-Data-Analyst_JR101519",
+      "job_id": "scrape:south-east-water:00edcc0a4d02",
+      "scraped_at_utc": "2026-11-16T12:25:02Z",
+      "near_miss_token": "data"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Associate Quantitative Engineer",
+      "location": "London",
+      "location_region": "uk",
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Associate-Quantitative-Engineer_R5968",
+      "job_id": "scrape:icap-energy-as:2e5465a20821",
+      "scraped_at_utc": "2026-11-16T12:25:12Z",
+      "near_miss_token": "quantitative"
+    },
+    {
+      "company": "ICAP Energy AS",
+      "title": "Senior Forward Deployed Engineer (AI)",
+      "location": "London",
+      "location_region": "uk",
+      "url": "https://tp.wd107.myworkdayjobs.com/TP-ICAP/job/London/Senior-Forward-Deployed-Engineer--AI-_R5705",
+      "job_id": "scrape:icap-energy-as:c4b08d3a774d",
+      "scraped_at_utc": "2026-11-16T12:25:12Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Centrica Energy",
+      "title": "Research & Innovation Manager - AI, data, and automation",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://centrica.wd3.myworkdayjobs.com/Centrica/job/Windsor/Research---Innovation-Manager--Automation-_R0085591-1",
+      "job_id": "scrape:centrica-energy:cb3aac2968ca",
+      "scraped_at_utc": "2026-11-16T12:25:17Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Workiva",
+      "title": "Senior Software Engineer - AI Enablement",
+      "location": "5 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/Ames/Senior-Software-Engineer---AI-Enablement_R12336-1",
+      "job_id": "scrape:workiva:0cdcb7ba2c2b",
+      "scraped_at_utc": "2026-11-16T12:25:17Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Workiva",
+      "title": "Principal Solutions Consultant - AI",
+      "location": "2 Locations",
+      "location_region": "unknown",
+      "url": "https://workiva.wd503.myworkdayjobs.com/careers/job/London/Principal-Solutions-Consultant---AI_R12432",
+      "job_id": "scrape:workiva:1507361fd1b7",
+      "scraped_at_utc": "2026-11-16T12:25:17Z",
+      "near_miss_token": "ai"
+    },
+    {
+      "company": "Teledyne Energy Systems",
+      "title": "Enterprise Analytics Architect",
+      "location": "5 Locations",
+      "location_region": "unknown",
+      "url": "https://flir.wd1.myworkdayjobs.com/flircareers/job/US---Daytona-Beach-FL-TDY/Sr-Manager--Data-Reporting---Analytics_REQ34364",
+      "job_id": "scrape:teledyne-energy-systems:f3999fac7a0b",
+      "scraped_at_utc": "2026-11-16T12:25:41Z",
+      "near_miss_token": "analytics"
+    }
+  ]
+}
